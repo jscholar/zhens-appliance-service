@@ -1,0 +1,21 @@
+{
+  "name": "zhens-appliance-service",
+  "version": "1.0.0",
+  "description": "Zhen's Appliance Service Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Zhen",
+    "Appliance",
+    "Repair",
+    "Service",
+    "Seattle"
+  ],
+  "author": "Jin Cai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
