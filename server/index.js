@@ -1,14 +1,19 @@
 var express = require("express");
 var app = express();
 
-app.set('view engine', 'html');
+app.set('views', './server/views');
+app.set('view engine', 'ejs');
 
+// index page
 app.get("/", (req, res) => {
+    res.render('pages/index');
 });
 
+// about page
 app.get("/about", (req, res) => {
+    res.render('pages/about');
 });
 
-app.listen(9999, process.env.IP, () => {
+app.listen(3000, process.env.IP, () => {
     console.log('server has started');
 });
