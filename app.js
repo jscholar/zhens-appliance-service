@@ -1,7 +1,6 @@
 var express = require("express");
 var app = express();
 
-app.set('views', './server/views');
 app.set('view engine', 'pug');
 
 // index page
