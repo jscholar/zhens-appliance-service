@@ -2,6 +2,7 @@ var express = require("express");
 var app = express();
 
 app.set('view engine', 'pug');
+app.use(express.static(__dirname + '/public'));
 
 // index page
 app.get("/", (req, res) => {
