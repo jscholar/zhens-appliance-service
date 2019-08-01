@@ -1,5 +1,33 @@
-header(class="top")
-    div(class="title") Zhen's Appliance Service
-    nav(class="navbar")
-        div
-            a(href="/") Home
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="css/style.css", type="text/css")
+        link(rel="stylesheet", href="css/nav.css")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css")
+        block head
+        title Zhen's Appliance Service
+    body
+        div.container
+            header.top
+                .menu-button
+                    button.drawer-open-button
+                        i(class="fas fa-bars")
+                .logo
+                    a(href="/")
+                        img(class="logo-img" src="img/logo.png")
+
+            div(class="drawer closed")
+                .navbar
+                    .nav-item
+                        a(href="/") Request Estimate
+                    .nav-item
+                        a(href="/") Service Map
+                    .nav-item
+                        a(href="/") About
+                .drawer-close-button
+            main
+                block content
+

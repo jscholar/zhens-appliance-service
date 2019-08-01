@@ -1,5 +1,7 @@
-html(lang='en')
-    include ./../../templates/head.pug
-    link(rel="stylesheet", href="css/style.css", type="text/css")
-    body
-        include ./../../templates/layout.pug
+extends ./../../templates/layout.pug
+
+block content
+    div
+
+block append content
+    script(src="scripts/nav.js")

@@ -1,24 +1,24 @@
-body {
-    height: 100%;
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.top {
+.container {
+    height: 100vh;
+    font-size: 1.5em
+}
+
+.content {
     width: 100%;
-    display: flex;
-    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
-.title {
-    float: left;
-    background-color: rgba(255, 222, 73, 0.5);
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    font-size: 3em;
+.zhen-car {
+    border-radius: 50%;
 }
 
-.navbar {
-    display: flex;
+@media (min-width: 500px) {
+
 }
