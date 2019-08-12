@@ -1,8 +1,14 @@
 /* Styling for layout and navigation of page */
+
+body {
+    --topHeight: 80px;
+}
+
 .top {
     display: flex;
-    height: 80px;
+    align-items: center;
     justify-content: space-between;
+    height: var(--topHeight);
     border-bottom: 1px solid rgb(202, 201, 201);
 }
 
@@ -11,16 +17,23 @@
 }
 
 .navbar {
+    flex-grow: 1;
     display: flex;
-    background-color: rgb(216, 216, 216);
-    height: 2em;
+    height: 100%;
 }
 
 .nav-item {
-    width: 100%;
+    word-wrap: none;
+    margin: 0 20px;
+    text-align: center;
+    height: 100%;
+    border: 2px rgb(85, 85, 85) solid;
+    border-radius: 10px;
 }
 
 .nav-item a {
+    display: block;
+    padding: 10px;
     color: inherit;
     text-decoration: none;
 }
@@ -30,9 +43,9 @@
 }
 
 .menu-button {
+    position: fixed;
     display: none;
 }
-
 
 .logo {
     height: 100%;
@@ -51,21 +64,29 @@
         height: 100%;
     }
 
+    .nav-item {
+        width: 100%;
+    }
+
     .menu-button {
         display: block;
+        width: 100px;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin: auto;
     }
 
     .drawer {
         position: fixed;
         width: 80%;
         transition: 500ms;
-        right: 0;
+        left: 0;
     }
 
     .drawer-open-button {
-        position: fixed;
-        top: 0;
-        left: 0;
         background: none;
         font-size: 18px;
         margin: 15px;
@@ -73,10 +94,11 @@
         border-radius: 10px;
         border: 2px solid;
         transition: 70ms ease-out;
+        cursor: pointer;
     }
 
     .drawer-open-button:active {
-        background-color: rgb(158, 158, 158);
+        background-color: rgb(122, 94, 94);
     }
 
     .drawer-close-button {
@@ -84,10 +106,8 @@
         right: 0;
         top: 0;
     }
-    
+
     .closed {
-        right: -80%;
+        left: -80%;
     }
-
 }
-
