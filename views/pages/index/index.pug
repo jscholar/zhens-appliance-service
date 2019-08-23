@@ -1,5 +1,33 @@
 extends ./../../templates/layout.pug
 
+mixin applianceThumbnail(appliance)
+    a(href="/?appliance=" + appliance.name.toLowerCase())
+        .appliance-thumbnail
+            img(src=appliance.svgPath, class="appliance-icon")
+            .appliance-name=appliance.name
+
+
+block head
+    link(rel="stylesheet", href="css/home.css", type="text/css")
+
 block content
-    div
+    .appliance-menu-wrapper
+        .appliance-menu-title
+            = "How can we help you?"
+        .appliance-menu
+            - 
+                var appliances = [
+                    {name: 'Refrigerator', svgPath: 'svg/001-fridge.svg'},
+                    {name: 'AC Unit', svgPath: 'svg/air-conditioner.svg'},
+                    {name: 'Dish Washer', svgPath: 'svg/002-dishwasher.svg'},
+                    {name: 'Range', svgPath: 'svg/004-gas-stove.svg'},
+                    {name: 'Washer', svgPath: 'svg/003-washer.svg'},
+                    {name: 'Dryer', svgPath: 'svg/006-dryer-1.svg'},
+                ]
+            each appliance in appliances
+                +applianceThumbnail(appliance)
+        .appliance-other
+            p
+                ="Something else?"
+            input(type="text" placeholder="Other Appliance")
 
