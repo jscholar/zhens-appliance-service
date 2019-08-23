@@ -42,7 +42,7 @@
 }
 
 .appliance-thumbnail {
-    min-width: 120px;
+    min-width: 80px;
     max-width: 150px;
     text-align: center;
     padding: 15px;
@@ -70,11 +70,20 @@
 }
 
 .appliance-other {
+    margin: 20px 0 50px;;
     text-align: center;
 }
 
+.progress-bar {
+    height: 10px;
+}
+
 @media (max-width: 500px) {
+    .appliance-thumbnail {
+        margin: 10px 10px 0;
+        max-width: 100px;
+    }
     .appliance-name {
-        font-size: 18px;
+        font-size: 4vw;
     }
 }
