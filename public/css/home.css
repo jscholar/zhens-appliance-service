@@ -1,0 +1,80 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.credits {
+    font-size: 15px;
+    display: none;
+}
+
+.credits-icon {
+    display: inline-block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.credits-icon:hover .credits {
+    display: block;
+}
+
+.appliance-menu-wrapper {
+    margin-top: 50px;
+}
+
+.appliance-menu {
+    padding: 0 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 800px;
+}
+
+.appliance-menu a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.appliance-menu-title {
+    text-align: center;
+}
+
+.appliance-thumbnail {
+    min-width: 120px;
+    max-width: 150px;
+    text-align: center;
+    padding: 15px;
+    margin: 30px 30px 0;
+    border-radius: 15px;
+    border: solid 2px rgba(71, 182, 233, 0.424);
+    transition: 100ms;
+    user-select: none;
+}
+
+.appliance-thumbnail:hover {
+    cursor: pointer;
+    background-color: rgba(71, 182, 233, 0.424);
+    box-shadow: 0 0 1px 2px #EEEEEE;
+}
+
+.appliance-icon {
+    opacity: 0.7;
+    width: 100%;
+}
+
+.appliance-name {
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+.appliance-other {
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .appliance-name {
+        font-size: 18px;
+    }
+}

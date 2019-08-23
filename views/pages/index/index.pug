@@ -1,6 +1,39 @@
 extends ./../../templates/layout.pug
 
+mixin applianceThumbnail(appliance)
+    a(href="/?appliance=" + appliance.name.toLowerCase())
+        .appliance-thumbnail
+            img(src=appliance.svgPath, class="appliance-icon")
+            .appliance-name=appliance.name
+
+
+block head
+    link(rel="stylesheet", href="css/home.css", type="text/css")
+
 block content
-    div
+    .appliance-menu-wrapper
+        .appliance-menu-title
+            = "How can we help you?"
+        .appliance-menu
+            - 
+                var appliances = [
+                    {name: 'Refrigerator', svgPath: 'svg/001-fridge.svg'},
+                    {name: 'AC Unit', svgPath: 'svg/air-conditioner.svg'},
+                    {name: 'Dish Washer', svgPath: 'svg/002-dishwasher.svg'},
+                    {name: 'Range', svgPath: 'svg/004-gas-stove.svg'},
+                    {name: 'Washer', svgPath: 'svg/003-washer.svg'},
+                    {name: 'Dryer', svgPath: 'svg/006-dryer-1.svg'},
+                ]
+            each appliance in appliances
+                +applianceThumbnail(appliance)
+        .appliance-other
+            p
+                ="Something else?"
+            input(type="text" placeholder="Other Appliance")
 
 
+
+    .credits-icon
+        |?
+        .credits
+            |<div>Icons made by <a href="https://www.flaticon.com/authors/itim2101" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"             title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/creaticca-creative-agency" title="Creaticca Creative Agency">Creaticca Creative Agency</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/smalllikeart" title="smalllikeart">smalllikeart</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/xnimrodx" title="xnimrodx">xnimrodx</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a></div>
