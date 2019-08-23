@@ -6,6 +6,7 @@ body {
 
 header {
     position: fixed;
+    z-index: 50;
 }
 
 main {
@@ -28,6 +29,7 @@ main {
 
 .drawer {
     top: 0;
+    background-color: #FFF
 }
 
 .navbar {
@@ -83,6 +85,8 @@ main {
     }
 
     .nav-item {
+        background-color: #FAFAFC;
+        margin: 10px;
         width: 80%;
     }
 
@@ -101,8 +105,11 @@ main {
         position: fixed;
         top: var(--topHeight);
         width: 100%;
+        padding: 10px;
         transition: 500ms;
         left: 0;
+        background-color: #EEE;
+        border-bottom: 1px solid rgb(230, 230, 230);
     }
 
     .drawer-open-button {
