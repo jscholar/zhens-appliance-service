@@ -4,13 +4,26 @@ body {
     --topHeight: 80px;
 }
 
+header {
+    position: fixed;
+}
+
+main {
+    padding-top: var(--topHeight);
+}
+
 .top {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
     min-width: fit-content;
     height: var(--topHeight);
     border-bottom: 1px solid rgb(202, 201, 201);
+}
+
+.main {
+    margin-top: var(--topHeight);
 }
 
 .drawer {
