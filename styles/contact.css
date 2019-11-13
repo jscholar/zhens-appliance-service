@@ -1,0 +1,10 @@
+.contact {
+    display: flex;
+    color: red;
+}
+
+@media (max-width: 500px) {
+    .contact {
+        flex-flow: column;
+    }
+}

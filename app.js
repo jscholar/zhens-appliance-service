@@ -1,17 +1,14 @@
+
 var express = require("express");
+var routes = require("./routes/routes");
 var app = express();
 
 app.set('view engine', 'pug');
+
 app.use(express.static(__dirname + '/public'));
 
-app.get("/", (req, res) => {
-    res.render('pages/index/index');
-});
+app.use("/", routes);
 
-app.get("*", (req, res) => {
-    res.send("Page not found");
-})
-
-app.listen(3000, process.env.IP, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('server has started');
 });

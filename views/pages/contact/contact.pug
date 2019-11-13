@@ -1,0 +1,21 @@
+extends ../../templates/layout.pug
+
+block head
+    link(rel="stylesheet", href="/contact/style123")
+
+block content
+    .contact
+        .contact-phone
+        .contact-email
+            p Leave a message
+            form(class="message" action="/contact/email" method="POST")
+                div
+                    label(for="name") Name:
+                    input(type="text" id="name" name="name")
+                div
+                    label(for="email") Email:
+                    input(type="email" id="email" name="email")
+                div
+                    label(for="msg") Message:
+                    textarea(name="msg", cols="30", rows="10")
+                button.btn.btn-primary(type='submit') Send
