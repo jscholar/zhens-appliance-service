@@ -4,4 +4,9 @@ contact.get("/", (req, res) => {
     res.render("pages/contact/contact");
 });
 
+contact.post("/message", (req, res) => {
+    console.log("post request received");
+    console.log(req.body);
+})
+
 module.exports = contact;
