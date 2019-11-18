@@ -1,0 +1,9 @@
+.contact {
+    display: flex;
+}
+
+@media (max-width: 500px) {
+    .contact {
+        flex-flow: column;
+    }
+}
