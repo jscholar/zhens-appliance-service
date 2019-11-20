@@ -6,17 +6,24 @@ block head
 block content
     .contact
         .contact-phone
+            h4 Call or text us at <span class="phone-number">206-488-9778</span>
+                
+        .divider
+            |or
         .contact-email
             p Leave a message
-            form(class="message" method="POST")
-                div
-                    label(for="name") Name:
+            form(class="email-form" method="POST")
+                .form-name
+                    label(for="name") Name: <br>
                     input(type="text" id="name" name="name")
-                div
-                    label(for="email") Email:
+                .form-email
+                    label(for="email") Email: <br>
                     input(type="email" id="email" name="email")
-                div
-                    label(for="msg") Message:
-                    textarea(name="msg", cols="30", rows="10")
-                button.btn.btn-primary(id="submit") Send
+                .form-zip
+                    label(for="zip") Zip Code: <br>
+                    input(type="number" id="zip" name="zip")
+                .form-message
+                    label(for="mmessage") Message: <br>
+                    textarea(class="form-message-area" name="message", cols="30", rows="10")
+                button.btn.btn-primary(id="submit") Send Message
     script(src="scripts/contact.js")
