@@ -13,21 +13,22 @@ html(lang="en")
     body
         div.container
             header.top
-                .menu-button
-                    button.drawer-open-button
-                        i(class="fas fa-bars")
-                .logo
-                    a(href="/")
-                        img(class="logo-img" src="img/logo.png")
-                div(class="drawer closed")
-                    .navbar
-                        .nav-item
-                            a(href="/contact") Contact
-                        .nav-item
-                            a(href="/map") Service Map
-                        .nav-item
-                            a(href="/about") About
-                    .drawer-close-button
+                .navbar
+                    .menu-button
+                        button.drawer-open-button
+                            i(class="fas fa-bars")
+                    .logo
+                        a(href="/")
+                            img(class="logo-img" src="img/logo.png")
+                    div(class="drawer closed")
+                        .drawer-nav
+                            .nav-item
+                                a(href="/contact") Contact
+                            .nav-item
+                                a(href="/map") Service Map
+                            .nav-item
+                                a(href="/about") About
+                        .drawer-close-button
             main
                 block content
 
