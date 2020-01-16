@@ -4,54 +4,55 @@ block head
     link(rel="stylesheet", href="css/contact.css")
 
 block content
-    .contact-title Contact Us
     .contact
-        .contact-direct
-            .contact-card
-                p.contact-type Directly
-                .contact-direct-info
-                    p Call or text <span class="zhen-name">Zhen</span> at <br> 
-                    <span class="phone-number">206-488-9778</span>
-                    table.contact-hours-table
-                        caption Call-Hours (PST)
-                        tr
-                            td Mon
-                            td 9:00 AM - 5:00 PM
-                        tr
-                            td Tue
-                            td 9:00 AM - 5:00 PM
-                        tr
-                            td Wed
-                            td 9:00 AM - 5:00 PM
-                        tr
-                            td Thu
-                            td 9:00 AM - 5:00 PM
-                        tr
-                            td Fri
-                            td 9:00 AM - 5:00 PM
-        .divider
-            hr.divider-line
-            |or
-            hr.divider-line
-        .contact-message
-            .contact-card
-                p.contact-type Leave a message
-                form(class="email-form" method="POST")
-                    .form-name
-                        label(class="form-name-label" for="nameFirst") Name: <br>
-                        input(class="form-name-input" type="text" id="name-first" name="nameFirst" placeholder="First Name" required)
-                        input(class="form-name-input" type="text" id="name-last" name="nameLast" placeholder="Last Name" required)
-                    .form-zip
-                        label(for="zip") Zip Code: <br>
-                        input(type="number" id="zip" name="zip" required)
-                    .form-email
-                        label(for="email") Email: <br>
-                        input(type="email" id="email" name="email" required)
-                    .form-message
-                        label(for="message") Message: <br>
-                        textarea(class="form-message-area" name="message", cols="30", rows="10" required)
-                    button.btn-submit(id="submit" type="submit")
-                        span.btn-submit-label Submit
-                        span.btn-submit-icon
-                            i(class="fas fa-angle-right")
-    script(src="scripts/contact.js")
+        .contact-title Contact Us
+        .contact-body
+            .contact-direct
+                .contact-card
+                    p.contact-type Directly
+                    .contact-direct-info
+                        p Call or text <span class="zhen-name">Zhen</span> at <br> 
+                        <span class="phone-number">206-488-9778</span>
+                        table.contact-hours-table
+                            caption Call-Hours (PST)
+                            tr
+                                td Mon
+                                td 9:00 AM - 5:00 PM
+                            tr
+                                td Tue
+                                td 9:00 AM - 5:00 PM
+                            tr
+                                td Wed
+                                td 9:00 AM - 5:00 PM
+                            tr
+                                td Thu
+                                td 9:00 AM - 5:00 PM
+                            tr
+                                td Fri
+                                td 9:00 AM - 5:00 PM
+            .divider
+                hr.divider-line
+                |or
+                hr.divider-line
+            .contact-message
+                .contact-card
+                    p.contact-type Leave a message
+                    form(class="email-form" method="POST")
+                        .form-name
+                            label(class="form-name-label" for="nameFirst") Name: <br>
+                            input(class="form-name-input" type="text" id="name-first" name="nameFirst" placeholder="First Name" required)
+                            input(class="form-name-input" type="text" id="name-last" name="nameLast" placeholder="Last Name" required)
+                        .form-zip
+                            label(for="zip") Zip Code: <br>
+                            input(type="number" id="zip" name="zip" required)
+                        .form-email
+                            label(for="email") Email: <br>
+                            input(type="email" id="email" name="email" required)
+                        .form-message
+                            label(for="message") Message: <br>
+                            textarea(class="form-message-area" name="message", cols="30", rows="10" required)
+                        button.btn-submit(id="submit" type="submit")
+                            span.btn-submit-label Submit
+                            span.btn-submit-icon
+                                i(class="fas fa-angle-right")
+        script(src="scripts/contact.js")

@@ -1,3 +1,8 @@
+.contact {
+    background-color: rgba(255, 184, 51, 0.096);
+    height: 100%;
+}
+
 .contact-title {
     font-weight: bold;
     padding-top: 20px;
@@ -6,7 +11,7 @@
     width: 100%;
 }
 
-.contact {
+.contact-body {
     display: flex;
     flex-flow: column;
     width: 100%;
@@ -155,7 +160,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media (min-width: 700px) {
-    .contact {
+    .contact-body {
         flex-flow: row;
     }
 
