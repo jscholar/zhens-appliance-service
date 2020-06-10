@@ -5,7 +5,7 @@ const PUBLIC = path.resolve(__dirname, '..', 'public');
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, '..', 'dist', 'client', 'client.js'),
+  entry: path.resolve(__dirname, '..', 'dist', 'client', 'index.bundle.js'),
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', 'src', 'templates', 'index.html'),
