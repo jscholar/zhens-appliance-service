@@ -5,7 +5,7 @@ import App from '../../client/App';
 import template from './template';
 
 const generateDocument = () => {
-  const app = ReactDOMServer.renderToString(<App></App>);
+  const app = ReactDOMServer.renderToString(<App />);
   return template(app);
 }
 
