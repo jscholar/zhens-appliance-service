@@ -1,8 +1,8 @@
 import express from 'express';
 import routes from './routes/routes.js';
-import generateDocument from './lib/ssr.js';
-
 import PATH from '../constants/PATH.js';
+
+import generateDocument from './lib/generateDocument';
 
 const document = generateDocument();
 
@@ -14,6 +14,10 @@ server.use(express.static(PATH.public));
 
 server.use(express.json());
 server.use(express.urlencoded({extended: true}))
+
+server.get('/', (req, res) => {
+  res.send(document);
+})
 
 server.use("/", routes);
 

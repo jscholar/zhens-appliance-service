@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server.js';
+
 import App from '../../client/App';
+import template from './template';
 
 const generateDocument = () => {
-  return ReactDOMServer.renderToString(<App></App>);
+  const app = ReactDOMServer.renderToString(<App></App>);
+  return template(app);
 }
 
 export default generateDocument;
