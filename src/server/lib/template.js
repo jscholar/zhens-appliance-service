@@ -1,16 +1,8 @@
-const document = `
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zhen's Appliance Service</title>
-  </head>
-  <body>
-    <!-- App -->
-  </body>
-  </html>
-`;
+import fs from 'fs';
+import path from 'path';
+import PATH from '../../constants/PATH';
+
+const document = fs.readFileSync(path.resolve(PATH.templates, 'index.html')).toString();
 
 const template = (app) => {
   return document.replace('<!-- App -->', app);

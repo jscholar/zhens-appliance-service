@@ -6,6 +6,8 @@ import generateDocument from './lib/generateDocument';
 
 const document = generateDocument();
 
+console.log(document);
+
 var server = express();
 
 server.set('view engine', 'pug');
