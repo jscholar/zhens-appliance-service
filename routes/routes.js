@@ -1,5 +1,7 @@
-const routes = require('express').Router();
-const contact = require('./contact');
+import express from 'express';
+import contact from './contact.js';
+
+const routes = express.Router();
 
 routes.use("/contact", contact);
 
@@ -11,4 +13,4 @@ routes.get("*", (req, res) => {
     res.send("Page not found");
 });
 
-module.exports = routes;
+export default routes;

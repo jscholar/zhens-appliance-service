@@ -1,4 +1,6 @@
-const contact = require('express').Router();
+import express from 'express';
+
+const contact = express.Router();
 
 contact.post("/message", (req, res) => {
     console.log("post request received");
@@ -15,4 +17,4 @@ contact.get("/", (req, res) => {
     res.render("pages/contact/contact");
 });
 
-module.exports = contact;
+export default contact;

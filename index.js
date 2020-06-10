@@ -1,10 +1,13 @@
-var express = require("express");
-var routes = require("./routes/routes");
+import express from 'express';
+import routes from './routes/routes.js';
+
+import PATH from './constants/PATH.js';
+
 var app = express();
 
 app.set('view engine', 'pug');
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(PATH.public));
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
