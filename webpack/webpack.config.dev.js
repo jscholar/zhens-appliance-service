@@ -9,7 +9,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', 'src', 'templates', 'index.html'),
-    })
+    }),
   ],
   output: {
     filename: 'bundle.js',
