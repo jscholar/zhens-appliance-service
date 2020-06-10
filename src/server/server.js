@@ -1,7 +1,10 @@
 import express from 'express';
 import routes from './routes/routes.js';
+import generateDocument from './lib/ssr.js';
 
 import PATH from '../constants/PATH.js';
+
+const document = generateDocument();
 
 var server = express();
 
