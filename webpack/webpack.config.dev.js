@@ -1,14 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const PUBLIC = path.resolve(__dirname, '..', 'public')
+const PUBLIC = path.resolve(__dirname, '..', 'public');
 
 module.exports = {
   mode: 'development',
   entry: path.resolve(__dirname, '..', 'dist', 'client', 'client.js'),
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '..', 'src', 'templates', 'index.html')
+      template: path.resolve(__dirname, '..', 'src', 'templates', 'index.html'),
     })
   ],
   output: {
@@ -19,5 +19,5 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(PUBLIC),
     port: 9000,
-  }
-}
+  },
+};
