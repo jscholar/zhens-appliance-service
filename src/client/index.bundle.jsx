@@ -4,5 +4,5 @@ import App from './App';
 
 render(
   <App />,
-  document.querySelector('#app')
-)
+  document.querySelector('#app'),
+);
