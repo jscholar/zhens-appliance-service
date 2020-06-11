@@ -1,4 +1,12 @@
+# Dependencies
 node_modules
+
+# Transpiled src
 dist
 
+# Webpack Bundles
 bundle.js
+client.js
+
+# Compiled styles
+public/css/styles*
