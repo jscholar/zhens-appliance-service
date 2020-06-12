@@ -1,0 +1,8 @@
+@use './utils/layout';
+
+.navbar {
+  position: fixed;
+  display: flex;
+  height: layout.$topheight;
+  padding-top: 10px;
+}
