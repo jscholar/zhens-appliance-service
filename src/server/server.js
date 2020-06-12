@@ -1,26 +1,24 @@
 import express from 'express';
-import routes from './routes/routes.js';
-import PATH from '../constants/PATH.js';
+import routes from './routes/routes';
+import PATH from '../constants/PATH';
 
 import generateDocument from './lib/generateDocument';
 
 const document = generateDocument();
 
-console.log(document);
-
-var server = express();
+const server = express();
 
 server.set('view engine', 'pug');
 
 server.use(express.static(PATH.public));
 
 server.use(express.json());
-server.use(express.urlencoded({extended: true}))
+server.use(express.urlencoded({ extended: true }));
 
 server.get('/', (req, res) => {
   res.send(document);
-})
+});
 
-server.use("/", routes);
+server.get('/prototypes', routes);
 
 export default server;
