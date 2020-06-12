@@ -1,9 +1,10 @@
 import React from 'react';
 
+import Landing from './pages/Landing';
+
 const App = () => (
   <main>
-    Landing
-    Contact
+    <Landing />
   </main>
 );
 
