@@ -10,7 +10,6 @@ routes.get('/', (req, res) => {
 });
 
 routes.get('*', (req, res) => {
-  console.log(req.url);
   res.send('Page not found');
 });
 
