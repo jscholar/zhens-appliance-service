@@ -19,6 +19,6 @@ server.get('/', (req, res) => {
   res.send(document);
 });
 
-server.get('/prototypes', routes);
+server.use('/prototypes', routes);
 
 export default server;
