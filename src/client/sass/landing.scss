@@ -1,3 +1,42 @@
+@use './utils/_colors';
+@use './utils/_typography';
+@use './utils/_layout';
+
 .landing {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  width: 80%;
+  text-align: center;
+}
+
+.banner-motto {
+  text-align: center;
+  font-size: typography.$paragraph;
+  margin: 10px 0;
+}
+
+.banner-title {
+  height: typography.$logoNormal;
+}
+
+.contact-button {
+  display: inline-block;
+  background-color: colors.$primary;
+  font-size: typography.$paragraph;
+  padding: 8px 16px;
+  color: white;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.513) 0 4px 4px;
+  text-decoration: none;
+  transition: 100ms linear;
+}
+
+.contact-button:hover {
+  background-color: colors.$primary-glow;
 }
