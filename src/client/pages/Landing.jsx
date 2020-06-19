@@ -1,10 +1,20 @@
 import React from 'react';
 
-import Banner from '../components/Banner';
+import Logo from '../components/Logo';
 
 const Landing = () => (
   <div className="landing">
-    <Banner />
+    <div className="banner">
+      <div className="banner-title">
+        <Logo />
+      </div>
+      <p className="banner-motto">
+        <em>&quot;Trust your repairs to a real, experienced technician&quot;</em>
+      </p>
+      <a href="#contact-info" className="contact-button">
+        Contact Zhen
+      </a>
+    </div>
   </div>
 );
 
