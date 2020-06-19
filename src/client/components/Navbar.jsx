@@ -4,7 +4,12 @@ import Logo from './Logo';
 
 const Navbar = () => (
   <nav className="navbar">
-    <Logo />
+    <a className="navbar-logo" href="/">
+      <Logo />
+    </a>
+    <div className="menu-button">
+      <icon className="fas fa-bars" />
+    </div>
   </nav>
 );
 
