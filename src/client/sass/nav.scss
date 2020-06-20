@@ -5,10 +5,10 @@
   position: fixed;
   display: flex;
   align-items: center;
-  width: layout.$pageWidth;
+  width: 100%;
   justify-content: space-between;
   height: layout.$topHeight;
-  padding-top: 10px;
+  padding: 10px 20px 0;
 }
 
 .navbar-logo {
