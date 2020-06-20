@@ -8,7 +8,7 @@ const Navbar = () => (
       <Logo />
     </a>
     <div className="menu-button">
-      <icon className="fas fa-bars" />
+      <i className="fas fa-bars" />
     </div>
   </nav>
 );
