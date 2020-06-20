@@ -8,8 +8,11 @@ const Landing = () => (
       <div className="banner-title">
         <Logo />
       </div>
+      <p className="banner-based">
+        <em>Based in Seattle, WA</em>
+      </p>
       <p className="banner-motto">
-        <em>&quot;Trust your repairs to a real, experienced technician&quot;</em>
+        &quot;Trust your repairs to a real, experienced technician&quot;
       </p>
       <a href="#contact-info" className="contact-button">
         Contact Zhen
