@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
+import Questionnaire from './components/Questionnaire';
 
 const App = () => {
   const [active, setActive] = useState(false);
@@ -17,7 +18,7 @@ const App = () => {
           <Landing />
         </div>
         <div className={`questionnaire ${qClass}`}>
-          Questionnaire
+          <Questionnaire />
         </div>
       </div>
     </main>
