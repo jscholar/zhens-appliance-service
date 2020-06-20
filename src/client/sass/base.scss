@@ -17,17 +17,15 @@ body {
   font-family: typography.$primaryfont;
 }
 
-main {
-  width: layout.$pageWidth;
-  margin: 0 auto;
-}
-
 .layout {
   height: 100vh;
+  overflow: hidden;
 }
 
 .pages {
-  height: calc(100% - #{layout.$bottomHeight});
+  height: 100%;
+  padding-top: layout.$topHeight;
+  padding-bottom: layout.$bottomHeight;
 }
 
 .logo {
