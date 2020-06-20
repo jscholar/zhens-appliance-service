@@ -17,7 +17,7 @@ const App = () => {
         <div className="pages">
           <Landing />
         </div>
-        <div className={`questionnaire ${qClass}`}>
+        <div className={`questionnaire-container ${qClass}`}>
           <Questionnaire />
         </div>
       </div>

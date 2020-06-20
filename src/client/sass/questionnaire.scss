@@ -1,0 +1,19 @@
+@use './utils/_colors';
+@use './utils/_layout';
+
+.questionnaire-container {
+  position: relative;
+  border-radius: 75px 75px 0 0;
+  background-color: colors.$complementTint;
+  height: 90%;
+  width: 100%;
+  bottom: layout.$bottomHeight;
+}
+
+.questionnaire {
+  height: 100%;
+}
+
+.questionnaire-active {
+  bottom: 90%;
+}
