@@ -1,5 +1,5 @@
-@use './utils/typography';
-@use './utils/layout';
+@use './utils/_typography';
+@use './utils/_layout';
 
 html {
   font-size: 16px;
@@ -20,6 +20,14 @@ body {
 main {
   width: layout.$pageWidth;
   margin: 0 auto;
+}
+
+.layout {
+  height: 100vh;
+}
+
+.pages {
+  height: calc(100% - #{layout.$bottomHeight});
 }
 
 .logo {
