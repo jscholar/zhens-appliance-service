@@ -17,3 +17,20 @@
 .questionnaire-active {
   bottom: 90%;
 }
+
+.caret-container {
+  margin: 0 auto;
+  height: 50px;
+  text-align: center;
+}
+
+.questionnaire-caret {
+  height: 100%;
+  width: auto !important;
+  color: colors.$complementFaded;
+  transition: 100ms;
+}
+
+.questionnaire-caret:hover {
+  transform: scale(1.4);
+}

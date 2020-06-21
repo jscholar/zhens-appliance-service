@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
 
+const fields = [
+  'appliance',
+  'brand',
+  'message',
+  'zip',
+];
+
 const Questionnaire = (props) => {
-  let [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState([null, null, null, null]);
+  const [current, setCurrent] = useState(0);
   return (
     <div className="questionnaire">
-      Questionnaire
+      <div className="caret-container">
+        <i className="fas fa-caret-up questionnaire-caret" />
+      </div>
+      <div className="status-container">
+        
+      </div>
     </div>
   );
 };
