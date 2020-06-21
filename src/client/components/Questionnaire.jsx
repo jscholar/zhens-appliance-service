@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import StatusBar from './StatusBar';
+
 const fields = [
   'appliance',
   'brand',
@@ -16,7 +18,7 @@ const Questionnaire = (props) => {
         <i className="fas fa-caret-up questionnaire-caret" />
       </div>
       <div className="status-container">
-        
+        <StatusBar progress={progress} current={current} />
       </div>
     </div>
   );
