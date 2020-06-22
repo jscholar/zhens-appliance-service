@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import StatusBar from './StatusBar';
 
@@ -9,19 +10,33 @@ const fields = [
   'zip',
 ];
 
-const Questionnaire = (props) => {
+const Questionnaire = ({ toggle, active }) => {
   const [progress, setProgress] = useState([null, null, null, null]);
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(-1);
   return (
     <div className="questionnaire">
       <div className="caret-container">
-        <i className="fas fa-caret-up questionnaire-caret" />
+        <button type="button" onClick={toggle}>
+          <i className="fas fa-caret-up questionnaire-caret" />
+        </button>
       </div>
       <div className="status-container">
-        <StatusBar progress={progress} current={current} />
+        <StatusBar progress={progress} current={current} active={active} />
+      </div>
+      <div className="questionnaire-field">
+        Field
       </div>
     </div>
   );
+};
+
+Questionnaire.propTypes = {
+  active: PropTypes.bool.isRequired,
+  toggle: PropTypes.func,
+};
+
+Questionnaire.defaultProps = {
+  toggle: () => console.log('toggle questionnaire'),
 };
 
 export default Questionnaire;
