@@ -19,6 +19,7 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(PUBLIC),
     port: 9000,
+    historyApiFallback: true,
   },
   module: {
     rules: [
