@@ -58,10 +58,11 @@
 }
 
 .status-circle {
-  height: 15px;
-  width: 15px;
+  box-sizing: content-box;
+  height: 10px;
+  width: 10px;
   border-radius: 50%;
-  border: 2px solid colors.$complementFaded;
+  box-shadow: 0 0 0px 1px colors.$complementFaded;
   background-color: #FFFFFF;
   z-index: 1;
 }
@@ -76,9 +77,38 @@
 
 .status-circle-done {
   background-color: colors.$complement;
-  border-color: colors.$complement;
+  box-shadow: 0 0 0px 1px colors.$complement;
 }
 
 .status-circle-current {
-  border-width: 3px;
+  box-shadow: 0 0 0px 3px colors.$complement;
 }
+
+// .status-circle {
+//   box-sizing: content-box;
+//   height: 10px;
+//   width: 10px;
+//   border-radius: 50%;
+//   box-shadow: 2px colors.$complementFaded;
+//   border: 2px solid colors.$complementFaded;
+//   background-color: #FFFFFF;
+//   z-index: 1;
+// }
+
+// .status-line {
+//   position: absolute;
+//   width: 100%;
+//   height: 1px;
+//   background-color: colors.$complementFaded;
+//   z-index: 0;
+// }
+
+// .status-circle-done {
+//   background-color: colors.$complement;
+//   border-color: colors.$complement;
+// }
+
+// .status-circle-current {
+//   border-width: 3px;
+//   border-color: colors.$complement;
+// }
