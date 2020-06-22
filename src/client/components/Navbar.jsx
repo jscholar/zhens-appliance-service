@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
 
 const Navbar = () => (
   <nav className="navbar">
-    <a className="navbar-logo" href="/">
+    <Link className="navbar-logo" to="/">
       <Logo />
-    </a>
+    </Link>
     <div className="menu-button">
       <i className="fas fa-bars" />
     </div>

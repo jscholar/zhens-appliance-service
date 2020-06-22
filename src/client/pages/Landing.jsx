@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Logo from '../components/Logo';
 
@@ -14,9 +15,9 @@ const Landing = () => (
       <p className="banner-motto">
         &quot;Trust your repairs to a real, experienced technician&quot;
       </p>
-      <a href="#contact-info" className="contact-button">
+      <Link to="contact" className="contact-button">
         Contact Zhen
-      </a>
+      </Link>
     </div>
   </div>
 );
