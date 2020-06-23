@@ -24,6 +24,7 @@ body {
 
 .pages {
   height: 100%;
+  overflow: scroll;
   padding-top: layout.$topHeight;
   padding-bottom: layout.$bottomHeight;
 }
