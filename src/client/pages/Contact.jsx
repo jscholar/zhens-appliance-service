@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Phone from '../components/Phone';
+import Email from '../components/Email';
 
 const Contact = () => {
   const [type, setType] = useState('phone');
+  const cardElement = type === 'phone' ? <Phone /> : <Email />;
 
   return (
     <div className="contact">
@@ -24,7 +26,7 @@ const Contact = () => {
         </button>
       </div>
       <div className="card">
-        <Phone />
+        {cardElement}
       </div>
     </div>
   );
