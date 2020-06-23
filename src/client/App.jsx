@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
@@ -13,24 +13,22 @@ const App = () => {
   const qClass = active ? 'questionnaire-active' : 'questionnaire-inactive';
 
   return (
-    <Router>
-      <main>
-        <div className="layout">
-          <Navbar />
-          <div className="pages">
-            <Switch>
-              <Route path="/about" component={() => <div>About</div>} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/service-map" component={() => <div>Service Map</div>} />
-              <Route path="/" component={Landing} />
-            </Switch>
-          </div>
-          <div className={`questionnaire-container ${qClass}`}>
-            <Questionnaire actve={active} />
-          </div>
+    <main>
+      <div className="layout">
+        <Navbar />
+        <div className="pages">
+          <Switch>
+            <Route path="/about" component={() => <div>About</div>} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/service-map" component={() => <div>Service Map</div>} />
+            <Route path="/" component={Landing} />
+          </Switch>
         </div>
-      </main>
-    </Router>
+        <div className={`questionnaire-container ${qClass}`}>
+          <Questionnaire actve={active} />
+        </div>
+      </div>
+    </main>
   );
 };
 

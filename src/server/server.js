@@ -4,7 +4,10 @@ import PATH from '../constants/PATH';
 
 import generateDocument from './lib/generateDocument';
 
-const document = generateDocument();
+const documents = {
+  landing: generateDocument('/'),
+  contact: generateDocument('/contact'),
+};
 
 const server = express();
 
@@ -15,8 +18,13 @@ server.use(express.static(PATH.public));
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
+server.get('/:route', (req, res) => {
+  const { route } = req.params;
+  res.send(documents[route] || documents.landing);
+});
+
 server.get('/', (req, res) => {
-  res.send(document);
+  res.send(documents.landing);
 });
 
 server.use('/prototypes', routes);
