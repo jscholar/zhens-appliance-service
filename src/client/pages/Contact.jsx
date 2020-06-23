@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Phone from '../components/Phone';
 
 const Contact = () => {
   const [type, setType] = useState('phone');
@@ -23,7 +24,7 @@ const Contact = () => {
         </button>
       </div>
       <div className="card">
-        Card
+        <Phone />
       </div>
     </div>
   );
