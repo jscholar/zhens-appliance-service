@@ -8,7 +8,6 @@ import Questionnaire from './components/Questionnaire';
 
 const App = () => {
   const [active, setActive] = useState(false);
-  const [page, setPage] = useState('landing');
 
   const qClass = active ? 'questionnaire-active' : 'questionnaire-inactive';
 
