@@ -25,7 +25,7 @@ const App = () => {
           </Switch>
         </div>
         <div className={`questionnaire-container ${qClass}`}>
-          <Questionnaire actve={active} />
+          <Questionnaire active={active} />
         </div>
       </div>
     </main>
