@@ -8,7 +8,7 @@ module.exports = {
   entry: path.resolve(__dirname, '..', 'src', 'client', 'index.bundle.jsx'),
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '..', 'src', 'templates', 'index.html'),
+      template: path.resolve(__dirname, '..', 'src', 'templates', 'index.dev.html'),
     }),
   ],
   output: {
