@@ -16,7 +16,7 @@ const Navbar = ({ toggleMenu, handleClick }) => (
 );
 
 Navbar.propTypes = {
-  handleClick: PropTypes.function,
+  handleClick: PropTypes.func,
   toggleMenu: PropTypes.func.isRequired,
 };
 
