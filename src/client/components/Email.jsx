@@ -1,36 +1,41 @@
 import React from 'react';
 
-const Email = (props) => (
-  <div className="email">
+const Email = () => (
+  <div className="email card">
     <p>Leave a message</p>
-    <div>
-      <form>
-        <div>
-          <label htmlFor="firstName">
-            First Name
-            <input name="firstName" type="text" required />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="lastName">
-            Last Name
-            <input name="lastName" type="text" required />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="email">
-            Email
-            <input name="email" type="email" required />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="message">
-            Message
-            <textarea />
-          </label>
-        </div>
-      </form>
-    </div>
+    <form>
+      <div className="field">
+        <label htmlFor="firstName">
+          First Name
+          <br />
+          <input name="firstName" type="text" required />
+        </label>
+      </div>
+      <div className="field">
+        <label htmlFor="lastName">
+          Last Name
+          <br />
+          <input name="lastName" type="text" required />
+        </label>
+      </div>
+      <div className="field">
+        <label htmlFor="email">
+          Email
+          <br />
+          <input name="email" type="email" required />
+        </label>
+      </div>
+      <div className="field field-message">
+        <label htmlFor="message">
+          Message
+          <br />
+          <textarea name="message" required />
+        </label>
+      </div>
+      <button type="submit">
+        Submit
+      </button>
+    </form>
   </div>
 );
 

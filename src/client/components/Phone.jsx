@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Phone = (props) => (
-  <div className="phone">
+  <div className="phone card">
     <p>
       {'Call or Text '}
       <span className="alias">Zhen</span>

@@ -19,13 +19,13 @@ const Contact = () => {
         <div className="divider" />
         <button
           type="button"
-          className={`type ${type === 'message' ? 'active' : ''}`}
-          onClick={() => setType('message')}
+          className={`type ${type === 'email' ? 'active' : ''}`}
+          onClick={() => setType('email')}
         >
           Leave a Message
         </button>
       </div>
-      <div className="card">
+      <div className="content">
         {cardElement}
       </div>
     </div>
