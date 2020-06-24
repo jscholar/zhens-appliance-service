@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Phone = (props) => (
+const Phone = () => (
   <div className="phone card">
     <p>
       {'Call or Text '}
