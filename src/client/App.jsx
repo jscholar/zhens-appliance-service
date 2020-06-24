@@ -16,9 +16,13 @@ const App = () => {
   return (
     <main>
       <div className="layout">
-        <Navbar toggleMenu={() => setMenu(!menu)} />
+        <Navbar handleClick={() => setActive(false)} toggleMenu={() => setMenu(!menu)} />
         <Overlay isOpen={menu} closeOverlay={() => setMenu(false)}>
-          <NavMenu handleClick={() => setMenu(false)} />
+          <NavMenu handleClick={() => {
+            setMenu(false);
+            setActive(false);
+          }}
+          />
         </Overlay>
         <div className="pages">
           <Switch>
@@ -29,7 +33,7 @@ const App = () => {
           </Switch>
         </div>
         <div className={`questionnaire-container ${qClass}`}>
-          <Questionnaire active={active} />
+          <Questionnaire toggle={() => setActive(!active)} active={active} />
         </div>
       </div>
     </main>

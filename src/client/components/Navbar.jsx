@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
 
-const Navbar = ({ toggleMenu }) => (
+const Navbar = ({ toggleMenu, handleClick }) => (
   <nav className="navbar">
-    <Link className="navbar-logo" to="/">
+    <Link className="navbar-logo" to="/" onClick={handleClick}>
       <Logo />
     </Link>
     <button type="button" className="menu-button" onClick={toggleMenu}>
@@ -16,7 +16,12 @@ const Navbar = ({ toggleMenu }) => (
 );
 
 Navbar.propTypes = {
+  handleClick: PropTypes.function,
   toggleMenu: PropTypes.func.isRequired,
+};
+
+Navbar.defaultProps = {
+  handleClick: () => {},
 };
 
 export default Navbar;
