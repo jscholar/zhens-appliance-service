@@ -3,6 +3,9 @@ import { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 
+const vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 render(
   <Router>
     <App />

@@ -25,11 +25,13 @@
 }
 
 .overlay {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   z-index: 10;
   animation: 200ms linear fadeIn;
 
