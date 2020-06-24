@@ -6,16 +6,10 @@ const Email = () => (
     <form>
       <div className="field">
         <label htmlFor="firstName">
-          First Name
+          Name
           <br />
-          <input name="firstName" type="text" required />
-        </label>
-      </div>
-      <div className="field">
-        <label htmlFor="lastName">
-          Last Name
-          <br />
-          <input name="lastName" type="text" required />
+          <input name="firstName" type="text" placeholder="First Name" required />
+          <input name="lastName" type="text" placeholder="Last Name" required />
         </label>
       </div>
       <div className="field">
