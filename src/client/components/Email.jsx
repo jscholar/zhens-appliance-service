@@ -32,7 +32,7 @@ const Email = () => (
           <textarea name="message" required />
         </label>
       </div>
-      <button type="submit">
+      <button type="submit" className="primary-button">
         Submit
       </button>
     </form>

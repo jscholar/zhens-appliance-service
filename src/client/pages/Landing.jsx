@@ -15,7 +15,7 @@ const Landing = () => (
       <p className="banner-motto">
         &quot;Trust your repairs to a real, experienced technician&quot;
       </p>
-      <Link to="contact" className="contact-button">
+      <Link to="contact" className="primary-button">
         Contact Zhen
       </Link>
     </div>

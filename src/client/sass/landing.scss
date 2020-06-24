@@ -28,19 +28,3 @@
 .banner-title {
   height: typography.$logoNormal;
 }
-
-.contact-button {
-  display: inline-block;
-  background-color: colors.$primary;
-  font-size: typography.$paragraph;
-  padding: 8px 16px;
-  color: white;
-  border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.513) 0 4px 4px;
-  text-decoration: none;
-  transition: 100ms linear;
-}
-
-.contact-button:hover {
-  background-color: colors.$primary-glow;
-}
