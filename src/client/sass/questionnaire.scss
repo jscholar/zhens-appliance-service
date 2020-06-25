@@ -28,8 +28,8 @@
   .form {
     height: calc(100% - #{layout.$topHeight});
     display: flex;
-    width: 400vw;
-    transition: 200ms;
+    transition: 300ms;
+    transition-delay: 100ms;
 
     .field {
       display: inline-block;

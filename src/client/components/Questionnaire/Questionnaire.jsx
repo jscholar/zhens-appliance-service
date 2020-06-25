@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 
 import StatusBar from './StatusBar';
 import Appliances from './Appliances';
+import ZipCode from './ZipCode';
+import Brand from './Brand';
+import ContactInfo from './ContactInfo';
 
 const fields = [
-  'appliance',
-  'brand',
-  'message',
-  'zip',
+  { name: 'appliance', component: Appliances },
+  { name: 'brand', component: Brand },
+  { name: 'zip', component: ZipCode },
+  { name: 'contact', component: ContactInfo },
 ];
 
 const Questionnaire = ({ toggle, active }) => {
@@ -30,12 +33,13 @@ const Questionnaire = ({ toggle, active }) => {
       <div
         className="form"
         style={{
+          width: `${100 * fields.length}vw`,
           transform: `translateX(-${100 * current}vw)`,
         }}
       >
         {
-          [Appliances].map((component, i) => (
-            <section key={fields[i]} className="field">
+          fields.map(({ name, component }, i) => (
+            <section key={name} className="field">
               {React.createElement(component, {
                 answer: (input) => {
                   const newProgress = [...progress];
@@ -47,9 +51,6 @@ const Questionnaire = ({ toggle, active }) => {
             </section>
           ))
         }
-        <section className="field">Brand</section>
-        <section className="field">Zip Code</section>
-        <section className="field">Contact Info</section>
       </div>
     </div>
   );
