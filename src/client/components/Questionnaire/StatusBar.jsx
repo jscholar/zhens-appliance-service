@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const StatusBar = ({ progress, current = -1 }) => (
+const StatusBar = ({ progress, current, active }) => (
   <div className="status-bar">
     <div className="status-line" />
     {progress.map((field, index) => (
@@ -13,7 +13,7 @@ const StatusBar = ({ progress, current = -1 }) => (
         className={
           `status-circle
           ${field !== null ? 'status-circle-done' : ''}
-          ${current === index ? 'status-circle-current' : ''}
+          ${active && current === index ? 'status-circle-current' : ''}
           `
         }
       />
@@ -23,10 +23,12 @@ const StatusBar = ({ progress, current = -1 }) => (
 
 StatusBar.propTypes = {
   progress: PropTypes.arrayOf(PropTypes.bool).isRequired,
+  active: PropTypes.bool,
   current: PropTypes.number,
 };
 
 StatusBar.defaultProps = {
+  active: true,
   current: -1,
 };
 
