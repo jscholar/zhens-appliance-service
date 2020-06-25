@@ -12,7 +12,8 @@ const fields = [
 
 const Questionnaire = ({ toggle, active }) => {
   const [progress, setProgress] = useState([null, null, null, null]);
-  const [current, setCurrent] = useState(-1);
+  const [current, setCurrent] = useState(0);
+
   return (
     <div className="questionnaire">
       <div className="caret-container">
@@ -24,7 +25,7 @@ const Questionnaire = ({ toggle, active }) => {
         <StatusBar progress={progress} current={current} active={active} />
       </div>
       <div className="questionnaire-field">
-        Field
+        
       </div>
     </div>
   );

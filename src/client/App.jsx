@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
 import Contact from './pages/Contact';
-import Questionnaire from './components/Questionnaire';
+import Questionnaire from './components/Questionnaire/Questionnaire';
 import Overlay from './components/Overlay';
 import NavMenu from './components/NavMenu';
 
