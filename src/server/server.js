@@ -18,6 +18,8 @@ server.use(express.static(PATH.public));
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
+server.use('/prototypes', routes);
+
 server.get('/:route', (req, res) => {
   const { route } = req.params;
   res.send(documents[route] || documents.landing);
@@ -26,7 +28,5 @@ server.get('/:route', (req, res) => {
 server.get('/', (req, res) => {
   res.send(documents.landing);
 });
-
-server.use('/prototypes', routes);
 
 export default server;
