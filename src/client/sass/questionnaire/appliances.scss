@@ -1,0 +1,52 @@
+@use '../utils/typography';
+@use '../utils/colors';
+
+.appliances {
+  padding: 0 10px;
+  overflow: auto;
+}
+
+.appliance-choices {
+  display: flex;
+  max-width: 350px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.appliance {
+  text-align: center;
+  font-size: typography.$helper;
+  min-width: 60px;
+  max-width: 85px;
+  padding: 8px 5px;
+  border-radius: 2px;
+  border: 3px solid colors.$complementFaded;
+  margin: 6px 3px;
+  cursor: pointer;
+}
+
+.appliance-icon {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2px;
+}
+
+.appliance-input {
+  label {
+    text-align: center;
+    display: block;
+  }
+  
+  input {
+    margin: 5px auto 0;
+    padding: 5px;
+    display: block;
+    background-color: white;
+    border: 1px solid colors.$complementFaded;
+  }
+}
+
+.question {
+  margin: 10px;
+}

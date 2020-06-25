@@ -1,6 +1,8 @@
 @use './utils/_colors';
 @use './utils/_layout';
 
+@use './questionnaire/appliances.scss';
+
 .questionnaire-container {
   position: relative;
   border-radius: 50px 50px 0 0;
