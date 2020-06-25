@@ -70,6 +70,9 @@ const Appliances = ({ answer }) => {
           type="button"
           disabled={appliance.length === 0}
           className="tertiary-button"
+          onClick={() => {
+            answer(appliance);
+          }}
         >
           Continue
         </button>
