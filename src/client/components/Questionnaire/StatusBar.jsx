@@ -15,7 +15,7 @@ const StatusBar = ({
     {progress.map((field, index) => (
       <div
         key={index}
-        onClick={() => setCurrent(index)}
+        onClick={() => { if(active) setCurrent(index) }}
         className={
           `status-circle
           ${field !== null ? 'status-circle-done' : ''}
