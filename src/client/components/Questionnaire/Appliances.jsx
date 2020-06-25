@@ -18,13 +18,28 @@ const Appliances = ({ answer }) => {
 
   return (
     <div className="appliances">
-      <div className="question">
+      <div className="prompt">
         <p>What needs fixing?</p>
       </div>
       <div className="appliance-choices">
         {
-          appliances.map(({ name, svgLink, label }) => (
-            <div className="appliance" key={name} onClick={() => answer(name)}>
+          appliances.map(({ name, svgLink, label }, i) => (
+            <div
+              role="button"
+              tabIndex={i}
+              className={`appliance ${appliance === name ? 'selected' : ''}`}
+              key={name}
+              onKeyPress={({ key }) => {
+                if (key === 'Enter') {
+                  setAppliance(name);
+                  answer(name);
+                }
+              }}
+              onClick={() => {
+                setAppliance(name);
+                answer(name);
+              }}
+            >
               <Appliance
                 name={name}
                 svgLink={svgLink}
@@ -38,6 +53,7 @@ const Appliances = ({ answer }) => {
         <label htmlFor="appliance">
           Other
           <input
+            tabIndex={appliances.length + 1}
             type="text"
             name="appliance"
             onChange={(e) => setAppliance(e.target.value)}
@@ -50,6 +66,13 @@ const Appliances = ({ answer }) => {
             }}
           />
         </label>
+        <button
+          type="button"
+          disabled={appliance.length === 0}
+          className="tertiary-button"
+        >
+          Continue
+        </button>
       </div>
     </div>
   );

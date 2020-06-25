@@ -1,0 +1,5 @@
+@use '../utils/typography';
+
+.prompt {
+  font-family: typography.$headerfont;
+}

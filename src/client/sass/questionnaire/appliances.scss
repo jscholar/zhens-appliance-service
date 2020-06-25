@@ -12,6 +12,10 @@
   margin: 20px auto;
   flex-wrap: wrap;
   justify-content: space-evenly;
+
+  .selected {
+    border-color: orange;
+  }
 }
 
 .appliance {
@@ -30,6 +34,7 @@
   width: 100%;
   height: auto;
   margin-bottom: 2px;
+  filter: opacity(colors.$gray2Opacity);
 }
 
 .appliance-input {
@@ -39,7 +44,7 @@
   }
   
   input {
-    margin: 5px auto 0;
+    margin: 5px auto 8px;
     padding: 5px;
     display: block;
     background-color: white;
