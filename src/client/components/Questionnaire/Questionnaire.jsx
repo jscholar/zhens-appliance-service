@@ -12,7 +12,7 @@ const fields = [
 ];
 
 const Questionnaire = ({ toggle, active }) => {
-  const [progress, setProgress] = useState([null, null, null, null]);
+  const [progress, setProgress] = useState(new Array(fields.length).fill(null));
   const [current, setCurrent] = useState(0);
 
   return (
