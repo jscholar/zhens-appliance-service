@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 
 import StatusBar from './StatusBar';
@@ -14,67 +14,80 @@ const fields = [
   { name: 'contact', component: ContactInfo },
 ];
 
-const Questionnaire = ({ toggle, active }) => {
-  const [progress, setProgress] = useState(new Array(fields.length).fill(null));
-  const [current, setCurrent] = useState(0);
+class Questionnaire extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      progress: new Array(fields.length).fill(null),
+      current: 0,
+    };
+    this.ref = createRef();
+    this.scrollTo = this.scrollTo.bind(this);
+  }
 
-  const ref = useRef();
+  scrollTo(i) {
+    this.ref.current.scroll({
+      left: this.ref.current.clientWidth * i,
+      behavior: 'smooth',
+    });
+  }
 
-  return (
-    <div
-      className="questionnaire"
-      ref={ref}
-      onScroll={({ target }) => {
-        setCurrent(Math.floor(target.scrollLeft / ref.current.clientWidth));
-      }}
-    >
-      <div className="questionnaire-top">
-        <div className="caret-container">
-          <button type="button" onClick={toggle}>
-            <i className="fas fa-caret-up questionnaire-caret" />
-          </button>
-        </div>
-        <div className="status-container">
-          <StatusBar
-            progress={progress}
-            current={current}
-            setCurrent={(i) => {
-              ref.current.scroll({
-                left: ref.current.clientWidth * i,
-                behavior: 'smooth',
-              });
-            }}
-            active={active}
-          />
-        </div>
-      </div>
+  render() {
+    const { ref } = this;
+    const { progress, current } = this.state;
+    const { toggle, active } = this.props;
+
+    return (
       <div
-        className="form"
-        style={{
-          width: `${100 * fields.length}vw`,
+        className="questionnaire"
+        ref={ref}
+        onScroll={({ target }) => {
+          this.setState({ current: Math.floor(target.scrollLeft / ref.current.clientWidth) });
         }}
       >
-        {
-          fields.map(({ name, component }, i) => (
-            <section key={name} className="field">
-              {React.createElement(component, {
-                answer: (input) => {
-                  const newProgress = [...progress];
-                  newProgress[i] = input;
-                  ref.current.scroll({
-                    left: ref.current.clientWidth * (i + 1),
-                    behavior: 'smooth',
-                  });
-                  setProgress(newProgress);
-                },
-              })}
-            </section>
-          ))
-        }
+        <div className="questionnaire-top">
+          <div className="caret-container">
+            <button type="button" onClick={toggle}>
+              <i className="fas fa-caret-up questionnaire-caret" />
+            </button>
+          </div>
+          <div className="status-container">
+            <StatusBar
+              progress={progress}
+              current={current}
+              setCurrent={(i) => {
+                this.scrollTo(i);
+              }}
+              active={active}
+            />
+          </div>
+        </div>
+        <div
+          className="form"
+          style={{
+            width: `${100 * fields.length}vw`,
+          }}
+        >
+          {
+            fields.map(({ name, component }, i) => (
+              <section key={name} className="field">
+                {React.createElement(component, {
+                  answer: (input) => {
+                    const newProgress = [...progress];
+                    this.scrollTo(i + 1);
+                    newProgress[i] = input;
+                    this.setState({ progress: newProgress });
+                  },
+                })}
+              </section>
+            ))
+          }
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
+
 
 Questionnaire.propTypes = {
   active: PropTypes.bool.isRequired,
