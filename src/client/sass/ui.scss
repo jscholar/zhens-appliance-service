@@ -20,6 +20,10 @@
   transition: 100ms linear;
 }
 
+.primary-button-sm {
+  padding: 8px 8px;
+}
+
 .primary-button:hover {
   background-color: colors.$primary-glow;
 }

@@ -4,24 +4,33 @@ import { Link } from 'react-router-dom';
 
 import Logo from './Logo';
 
-const Navbar = ({ toggleMenu, handleClick }) => (
+const Navbar = ({ toggleMenu, handleClick, displayContact }) => (
   <nav className="navbar">
     <Link className="navbar-logo" to="/" onClick={handleClick}>
       <Logo />
     </Link>
-    <button type="button" className="menu-button" onClick={toggleMenu}>
-      <i className="fas fa-bars" />
-    </button>
+    <div className="navbar-right">
+      <div>
+        <Link to="contact" className="primary-button primary-button-sm">
+          Contact
+        </Link>
+      </div>
+      <button type="button" className="menu-button" onClick={toggleMenu}>
+        <i className="fas fa-bars" />
+      </button>
+    </div>
   </nav>
 );
 
 Navbar.propTypes = {
   handleClick: PropTypes.func,
   toggleMenu: PropTypes.func.isRequired,
+  displayContact: PropTypes.bool,
 };
 
 Navbar.defaultProps = {
   handleClick: () => {},
+  displayContact: true,
 };
 
 export default Navbar;
