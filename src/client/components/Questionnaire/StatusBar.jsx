@@ -22,7 +22,7 @@ const StatusBar = ({ progress, current, active }) => (
 );
 
 StatusBar.propTypes = {
-  progress: PropTypes.arrayOf(PropTypes.bool).isRequired,
+  progress: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.bool, PropTypes.string])).isRequired,
   active: PropTypes.bool,
   current: PropTypes.number,
 };
