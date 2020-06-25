@@ -46,3 +46,19 @@
   margin-bottom: 2px;
   filter: opacity(colors.$gray2Opacity);
 }
+
+.other-input {
+  label {
+    font-family: typography.$headerfont;
+    text-align: center;
+    display: block;
+  }
+  
+  input {
+    margin: 5px auto 8px;
+    padding: 5px;
+    display: block;
+    background-color: white;
+    border: 1px solid colors.$complementFaded;
+  }
+}

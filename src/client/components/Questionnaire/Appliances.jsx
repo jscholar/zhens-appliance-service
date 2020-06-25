@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Selection from './Selection';
+import Input from './Input';
 
 const appliances = [
   { name: 'refrigerator', svgLink: '/svg/001-fridge.svg', label: 'Refrigerator' },
@@ -10,7 +11,6 @@ const appliances = [
   { name: 'washer', svgLink: '/svg/003-washer.svg', label: 'Washer' },
   { name: 'dryer', svgLink: '/svg/007-dryer-2.svg', label: 'Dryer' },
   { name: 'air-conditioner', svgLink: '/svg/air-conditioner.svg', label: 'AC Unit' },
-
 ];
 
 const Appliances = ({ answer }) => {
@@ -23,9 +23,10 @@ const Appliances = ({ answer }) => {
       </div>
       <div className="selection-choices">
         {
-          appliances.map(({ name, svgLink, label }) => (
+          appliances.map(({ name, svgLink, label }, index) => (
             <Selection
               key={name}
+              index={index}
               handleSelect={() => {
                 setAppliance(name);
                 answer(name);
@@ -38,34 +39,11 @@ const Appliances = ({ answer }) => {
           ))
         }
       </div>
-      <div className="appliance-input">
-        <label htmlFor="appliance">
-          Other
-          <input
-            tabIndex={appliances.length + 1}
-            type="text"
-            name="appliance"
-            onChange={(e) => setAppliance(e.target.value)}
-            onKeyPress={(e) => {
-              if (e.key === 'Enter') {
-                // Unfocuses input on mobile browsers
-                e.target.blur();
-                answer(appliance);
-              }
-            }}
-          />
-        </label>
-        <button
-          type="button"
-          disabled={appliance.length === 0}
-          className="tertiary-button"
-          onClick={() => {
-            answer(appliance);
-          }}
-        >
-          Continue
-        </button>
-      </div>
+      <Input
+        prompt="Other"
+        fieldName="appliance"
+        handleSubmit={answer}
+      />
     </div>
   );
 };
