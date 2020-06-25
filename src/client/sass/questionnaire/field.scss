@@ -1,5 +1,48 @@
+@use '../utils/colors';
 @use '../utils/typography';
 
 .prompt {
   font-family: typography.$headerfont;
+}
+
+.selection-choices {
+  display: flex;
+  max-width: 350px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .selected {
+    border-color: orange;
+  }
+}
+
+.selection {
+  text-align: center;
+  font-size: typography.$helper;
+  min-width: 60px;
+  max-width: 85px;
+  padding: 8px 5px 0;
+  border-radius: 2px;
+  border: 2px solid colors.$complementFaded;
+  margin: 6px 3px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    flex-grow: 1;
+    padding: 4px 0;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.selection-icon {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2px;
+  filter: opacity(colors.$gray2Opacity);
 }

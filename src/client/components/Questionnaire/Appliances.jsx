@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Appliance from './Appliance';
+import Selection from './Selection';
 
 const appliances = [
   { name: 'refrigerator', svgLink: '/svg/001-fridge.svg', label: 'Refrigerator' },
@@ -21,31 +21,20 @@ const Appliances = ({ answer }) => {
       <div className="prompt">
         <p>What needs fixing?</p>
       </div>
-      <div className="appliance-choices">
+      <div className="selection-choices">
         {
-          appliances.map(({ name, svgLink, label }, i) => (
-            <div
-              role="button"
-              tabIndex={i}
-              className={`appliance ${appliance === name ? 'selected' : ''}`}
+          appliances.map(({ name, svgLink, label }) => (
+            <Selection
               key={name}
-              onKeyPress={({ key }) => {
-                if (key === 'Enter') {
-                  setAppliance(name);
-                  answer(name);
-                }
-              }}
-              onClick={() => {
+              handleSelect={() => {
                 setAppliance(name);
                 answer(name);
               }}
-            >
-              <Appliance
-                name={name}
-                svgLink={svgLink}
-                label={label}
-              />
-            </div>
+              active={name === appliance}
+              name={name}
+              svgLink={svgLink}
+              label={label}
+            />
           ))
         }
       </div>

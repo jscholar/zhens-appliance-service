@@ -6,37 +6,6 @@
   overflow: auto;
 }
 
-.appliance-choices {
-  display: flex;
-  max-width: 350px;
-  margin: 20px auto;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
-  .selected {
-    border-color: orange;
-  }
-}
-
-.appliance {
-  text-align: center;
-  font-size: typography.$helper;
-  min-width: 60px;
-  max-width: 85px;
-  padding: 8px 5px;
-  border-radius: 2px;
-  border: 2px solid colors.$complementFaded;
-  margin: 6px 3px;
-  cursor: pointer;
-}
-
-.appliance-icon {
-  width: 100%;
-  height: auto;
-  margin-bottom: 2px;
-  filter: opacity(colors.$gray2Opacity);
-}
-
 .appliance-input {
   label {
     text-align: center;
