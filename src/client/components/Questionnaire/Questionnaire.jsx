@@ -27,7 +27,12 @@ const Questionnaire = ({ toggle, active }) => {
           </button>
         </div>
         <div className="status-container">
-          <StatusBar progress={progress} current={current} active={active} />
+          <StatusBar
+            progress={progress}
+            current={current}
+            setCurrent={setCurrent}
+            active={active}
+          />
         </div>
       </div>
       <div
