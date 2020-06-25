@@ -33,7 +33,20 @@ const Questionnaire = ({ toggle, active }) => {
           transform: `translateX(-${100 * current}vw)`,
         }}
       >
-        <section className="field"><Appliances /></section>
+        {
+          [Appliances].map((component, i) => (
+            <section key={fields[i]} className="field">
+              {React.createElement(component, {
+                answer: (input) => {
+                  const newProgress = [...progress];
+                  newProgress[i] = input;
+                  setProgress(newProgress);
+                  setCurrent(i + 1);
+                },
+              })}
+            </section>
+          ))
+        }
         <section className="field">Brand</section>
         <section className="field">Zip Code</section>
         <section className="field">Contact Info</section>
