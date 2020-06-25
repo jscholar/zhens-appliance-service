@@ -8,7 +8,7 @@
   height: calc(100% - #{layout.$topHeight} - 10px);
   width: 100%;
   transition: 350ms ease-out;
-  transform: translateY(-10%);
+  transform: translateY(-1 * layout.$topHeight);
 }
 
 .questionnaire {
