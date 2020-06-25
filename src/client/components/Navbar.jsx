@@ -10,11 +10,17 @@ const Navbar = ({ toggleMenu, handleClick, displayContact }) => (
       <Logo />
     </Link>
     <div className="navbar-right">
-      <div>
-        <Link to="contact" className="primary-button primary-button-sm">
-          Contact
-        </Link>
-      </div>
+
+      {
+        displayContact
+          ? (
+            <div>
+              <Link onClick={handleClick} to="contact" className="primary-button primary-button-sm">
+                Contact
+              </Link>
+            </div>
+          ) : null
+      }
       <button type="button" className="menu-button" onClick={toggleMenu}>
         <i className="fas fa-bars" />
       </button>
