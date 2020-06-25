@@ -183,7 +183,7 @@ input { /* 1 */
 /**
 * Remove strange outlines. Chrome
 */
-button:hover, button:active, button:focus {
+button:hover {
   outline: none;
   border: none;
 }
