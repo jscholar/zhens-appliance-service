@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import Appliance from './Appliance';
 
 const appliances = [
@@ -11,31 +13,50 @@ const appliances = [
 
 ];
 
-const Appliances = ({ answer }) => (
-  <div className="appliances">
-    <div className="question">
-      <p>What needs fixing?</p>
+const Appliances = ({ answer }) => {
+  const [appliance, setAppliance] = useState('');
+
+  return (
+    <div className="appliances">
+      <div className="question">
+        <p>What needs fixing?</p>
+      </div>
+      <div className="appliance-choices">
+        {
+          appliances.map(({ name, svgLink, label }) => (
+            <div className="appliance" key={name} onClick={() => answer(name)}>
+              <Appliance
+                name={name}
+                svgLink={svgLink}
+                label={label}
+              />
+            </div>
+          ))
+        }
+      </div>
+      <div className="appliance-input">
+        <label htmlFor="appliance">
+          Other
+          <input
+            type="text"
+            name="appliance"
+            onChange={(e) => setAppliance(e.target.value)}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') {
+                // Unfocuses input on mobile browsers
+                e.target.blur();
+                answer(appliance);
+              }
+            }}
+          />
+        </label>
+      </div>
     </div>
-    <div className="appliance-choices">
-      {
-        appliances.map(({ name, svgLink, label }) => (
-          <div className="appliance" key={name} onClick={() => console.log(name)}>
-            <Appliance
-              name={name}
-              svgLink={svgLink}
-              label={label}
-            />
-          </div>
-        ))
-      }
-    </div>
-    <div className="appliance-input">
-      <label htmlFor="appliance">
-        Other
-        <input type="text" name="appliance" />
-      </label>
-    </div>
-  </div>
-);
+  );
+};
+
+Appliances.propTypes = {
+  answer: PropTypes.func.isRequired,
+};
 
 export default Appliances;
