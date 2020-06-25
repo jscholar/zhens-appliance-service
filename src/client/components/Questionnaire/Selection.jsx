@@ -18,14 +18,16 @@ const Selection = ({
     onClick={handleSelect}
   >
     <img className="selection-icon" alt={label} src={svgLink} />
-    <p>{label}</p>
+    {
+      label ? <p>{label}</p> : null
+    }
   </div>
 );
 
 Selection.propTypes = {
   handleSelect: PropTypes.func,
   index: PropTypes.number.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   svgLink: PropTypes.string.isRequired,
   active: PropTypes.bool,
 };
@@ -33,6 +35,7 @@ Selection.propTypes = {
 Selection.defaultProps = {
   handleSelect: () => {},
   active: false,
+  label: '',
 };
 
 export default Selection;
