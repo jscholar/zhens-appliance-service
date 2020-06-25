@@ -15,17 +15,31 @@
   padding: 8px 16px;
   color: white;
   border-radius: 3px;
-  box-shadow: rgba(0, 0, 0, 0.513) 0 4px 4px;
+  box-shadow: rgba(0, 0, 0, 0.513) 0 3px 4px;
   text-decoration: none;
   transition: 100ms linear;
+  &:hover {
+    background-color: colors.$primary-glow;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px 2px;
+  }
 }
 
 .primary-button-sm {
-  padding: 8px 8px;
+  padding: 6px 8px;
 }
 
-.primary-button:hover {
-  background-color: colors.$primary-glow;
+.tertiary-button {
+  display: inline-block;
+  font-size: typography.$paragraph;
+  padding: 8px;
+  border-radius: 3px;
+  color: white;
+  transition: 100ms linear;
+  background-color: colors.$complement;
+  &:disabled {
+    background-color: colors.$gray4;
+    color: grey;
+  }
 }
 
 .overlay {
