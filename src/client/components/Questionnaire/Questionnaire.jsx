@@ -27,8 +27,16 @@ const Questionnaire = ({ toggle, active }) => {
           <StatusBar progress={progress} current={current} active={active} />
         </div>
       </div>
-      <div className="questionnaire-field">
-        <section><Appliances /></section>
+      <div
+        className="form"
+        style={{
+          transform: `translateX(-${100 * current}vw)`,
+        }}
+      >
+        <section className="field"><Appliances /></section>
+        <section className="field">Brand</section>
+        <section className="field">Zip Code</section>
+        <section className="field">Contact Info</section>
       </div>
     </div>
   );
