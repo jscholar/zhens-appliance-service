@@ -27,6 +27,9 @@ body {
 }
 
 .pages {
+  @import './landing.scss';
+  @import './contact.scss';
+  @import './about.scss';
   height: 100%;
   overflow: auto;
   margin-bottom: layout.$bottomHeight;
