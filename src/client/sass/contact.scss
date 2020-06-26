@@ -95,12 +95,22 @@
     }
     
     input, textarea {
+      display: inline-block;
       width: 100%;
       margin-bottom: 2px;
       border-radius: 3px;
       border: 1px solid #000000;
       padding: 5px;
       line-height: 1.0rem;
+    }
+
+    .firstname {
+      width: 48%;
+      margin-right: 4%;
+    }
+
+    .lastname {
+      width: 48%;
     }
 
     textarea {

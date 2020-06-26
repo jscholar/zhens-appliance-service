@@ -8,8 +8,8 @@ const Email = () => (
         <label htmlFor="firstName">
           Name
           <br />
-          <input name="firstName" type="text" placeholder="First Name" required />
-          <input name="lastName" type="text" placeholder="Last Name" required />
+          <input className="firstname" name="firstName" type="text" placeholder="First Name" required />
+          <input className="lastname" name="lastName" type="text" placeholder="Last Name" required />
         </label>
       </div>
       <div className="field">
