@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import PhoneInput from 'react-phone-input-auto-format';
 
-const ContactInfo = ({ answer, submit }) => {
+const ContactInfo = ({ answer }) => {
   const [info, setInfo] = useState({});
 
   return (
@@ -15,7 +15,6 @@ const ContactInfo = ({ answer, submit }) => {
       <form onSubmit={(e) => {
         e.preventDefault();
         answer(info);
-        submit();
       }}
       >
         <input
@@ -43,7 +42,6 @@ const ContactInfo = ({ answer, submit }) => {
 
 ContactInfo.propTypes = {
   answer: PropTypes.func.isRequired,
-  submit: PropTypes.func.isRequired,
 };
 
 export default ContactInfo;

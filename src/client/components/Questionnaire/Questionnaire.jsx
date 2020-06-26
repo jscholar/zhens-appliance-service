@@ -1,4 +1,5 @@
 import React, { Component, createRef } from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 
 import StatusBar from './StatusBar';
@@ -22,6 +23,7 @@ class Questionnaire extends Component {
     this.state = {
       progress: new Array(fields.length).fill(null),
       current: 0,
+      notDone: false,
     };
     this.ref = createRef();
     this.scrollTo = this.scrollTo.bind(this);
@@ -39,6 +41,12 @@ class Questionnaire extends Component {
     const { progress } = this.state;
     if (progress.includes(null)) {
       console.log('not done');
+      this.setState({ notDone: true });
+    } else {
+      axios.post('/api/message', progress)
+        .then(() => {
+          console.log('success');
+        });
     }
   }
 
@@ -86,9 +94,12 @@ class Questionnaire extends Component {
                     const newProgress = [...progress];
                     this.scrollTo(Math.min(i + 1, fields.length - 1));
                     newProgress[i] = input;
-                    this.setState({ progress: newProgress });
+                    this.setState({ progress: newProgress }, () => {
+                      if (i === fields.length - 1) {
+                        submitRequest();
+                      }
+                    });
                   },
-                  submit: submitRequest,
                 })}
               </section>
             ))
