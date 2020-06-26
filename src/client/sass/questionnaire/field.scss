@@ -1,6 +1,23 @@
 @use '../utils/colors';
 @use '../utils/typography';
 
+.field {
+  scroll-snap-stop: always;
+  scroll-snap-align: start;
+  display: inline-block;
+  overflow: scroll;
+  height: 100%;
+  width: 100vw;
+  padding: 10px 5px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
 .prompt {
   font-family: typography.$headerfont;
 }
@@ -45,7 +62,7 @@
   min-height: 60px;
   height: auto;
   margin-bottom: 2px;
-  filter: opacity(colors.$gray2Opacity);
+  filter: opacity(colors.$gray2Opacity) grayscale(0.5);
 }
 
 .active {

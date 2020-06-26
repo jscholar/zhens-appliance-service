@@ -45,22 +45,6 @@
     height: calc(100% - #{layout.$topHeight});
     display: flex;
     transition: 300ms;
-
-    .field {
-      scroll-snap-stop: always;
-      scroll-snap-align: start;
-      display: inline-block;
-      overflow: scroll;
-      height: 100%;
-      width: 100vw;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none; /* Firefox */
-      -ms-overflow-style: none;  /* Internet Explorer 10+ */
-      &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-      }
-    }
   }
   
   .caret-container {
