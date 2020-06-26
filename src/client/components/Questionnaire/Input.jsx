@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({ prompt, fieldName, handleSubmit }) => {
+const Input = ({
+  prompt,
+  fieldName,
+  handleSubmit,
+  type,
+}) => {
   const [value, setValue] = useState('');
 
   return (
@@ -10,6 +15,7 @@ const Input = ({ prompt, fieldName, handleSubmit }) => {
         {prompt}
         <input
           type="text"
+          pattern={type === 'number' ? '[0-9]*' : '.*'}
           name={fieldName}
           onChange={({ target }) => setValue(target.value)}
           onKeyPress={({ key, target }) => {
@@ -36,9 +42,15 @@ const Input = ({ prompt, fieldName, handleSubmit }) => {
 };
 
 Input.propTypes = {
-  prompt: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  prompt: PropTypes.string,
   fieldName: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+};
+
+Input.defaultProps = {
+  prompt: '',
+  type: 'text',
 };
 
 export default Input;
