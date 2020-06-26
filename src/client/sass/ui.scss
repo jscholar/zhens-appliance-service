@@ -8,16 +8,20 @@
   border-radius: 8px;
 }
 
-.primary-button {
+button {
   display: inline-block;
+  border-radius: 3px;
+  transition: 100ms linear;
+  cursor: pointer;
+}
+
+.primary-button {
   background-color: colors.$primary;
   font-size: typography.$paragraph;
   padding: 8px 16px;
   color: white;
-  border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.513) 0 3px 4px;
   text-decoration: none;
-  transition: 100ms linear;
   &:hover {
     background-color: colors.$primary-glow;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px 2px;
@@ -28,17 +32,25 @@
   padding: 6px 8px;
 }
 
+.secondary-button {
+  box-shadow: 0 0 0 2px inset colors.$complement;
+  padding: 8px;
+  color: colors.$complement;
+}
+
 .tertiary-button {
-  display: inline-block;
   font-size: typography.$paragraph;
   padding: 8px;
-  border-radius: 3px;
   color: white;
-  transition: 100ms linear;
   background-color: colors.$complement;
+  &:hover {
+    background-color: colors.$complementGlow;
+  }
+
   &:disabled {
     background-color: colors.$gray4;
     color: grey;
+    cursor: default;
   }
 }
 
@@ -64,7 +76,6 @@
   .close-btn {
     padding: 10px;
     color: colors.$warning;
-    cursor: pointer;
   }
 
   .close-icon {
