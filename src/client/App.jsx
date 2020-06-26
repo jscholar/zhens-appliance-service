@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import './sass/index.scss';
+
 import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
 import Contact from './pages/Contact';

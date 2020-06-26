@@ -1,9 +1,11 @@
 const path = require('path');
+const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const common = require('./webpack.config.common');
 
 const PUBLIC = path.resolve(__dirname, '..', 'public');
 
-module.exports = {
+module.exports = merge(common, {
   mode: 'development',
   entry: path.resolve(__dirname, '..', 'src', 'client', 'index.bundle.jsx'),
   plugins: [
@@ -21,18 +23,4 @@ module.exports = {
     port: 9000,
     historyApiFallback: true,
   },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: [
-          /node_modules/,
-        ],
-        loader: 'babel-loader',
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-};
+});

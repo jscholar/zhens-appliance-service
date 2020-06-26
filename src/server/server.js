@@ -1,6 +1,6 @@
 import express from 'express';
 import routes from './routes/routes';
-import PATH from '../constants/PATH';
+import PATH from '../PATH';
 
 import generateDocument from './lib/generateDocument';
 
