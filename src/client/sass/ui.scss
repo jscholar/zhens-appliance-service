@@ -90,3 +90,11 @@
 .overlay-closed {
   display: none;
 }
+
+input {
+  margin: 5px auto 8px;
+  padding: 5px;
+  display: block;
+  background-color: white;
+  border: 1px solid colors.$complementFaded;
+}
