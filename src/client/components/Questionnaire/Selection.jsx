@@ -6,11 +6,10 @@ const Selection = ({
   svgLink,
   active,
   handleSelect,
-  index,
 }) => (
   <div
     role="grid cell"
-    tabIndex={index}
+    tabIndex="0"
     className={`selection ${active ? 'active' : ''}`}
     onKeyPress={({ key }) => {
       if (key === 'Enter') handleSelect();
@@ -26,7 +25,6 @@ const Selection = ({
 
 Selection.propTypes = {
   handleSelect: PropTypes.func,
-  index: PropTypes.number.isRequired,
   label: PropTypes.string,
   svgLink: PropTypes.string.isRequired,
   active: PropTypes.bool,

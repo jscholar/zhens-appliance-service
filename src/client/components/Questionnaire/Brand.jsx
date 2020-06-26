@@ -19,10 +19,9 @@ const Brand = ({ answer }) => {
         <p>What brand is your appliance?</p>
       </div>
       <div className="selection-choices">
-        {brands.map(({ name, svgLink, label }, index) => (
+        {brands.map(({ name, svgLink, label }) => (
           <Selection
             key={name}
-            index={index}
             handleSelect={() => {
               setBrand(name);
               answer(name);

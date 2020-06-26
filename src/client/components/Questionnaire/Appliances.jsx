@@ -23,10 +23,9 @@ const Appliances = ({ answer }) => {
       </div>
       <div className="selection-choices">
         {
-          appliances.map(({ name, svgLink, label }, index) => (
+          appliances.map(({ name, svgLink, label }) => (
             <Selection
               key={name}
-              index={index}
               handleSelect={() => {
                 setAppliance(name);
                 answer(name);
