@@ -17,18 +17,24 @@ const ContactInfo = ({ answer }) => {
         answer(info);
       }}
       >
-        <input
-          name="firstName"
-          type="text"
-          placeholder="First Name"
-          required
-          onChange={() => {
-
-          }}
-        />
-        <input name="lastName" type="text" placeholder="Last Name" required />
-        <input name="email" type="email" placeholder="Email" />
-        <PhoneInput placeholder="Phone" />
+        {
+          [
+            { name: 'firstName', placeholder: 'First Name', type: 'text' },
+            { name: 'lastName', placeholder: 'Last Name', type: 'text' },
+            { name: 'email', placeholder: 'Email', type: 'email' },
+          ].map(({ name, placeholder, type }) => (
+            <input
+              name={name}
+              type={type}
+              placeholder={placeholder}
+              required
+              onChange={({ target }) => {
+                setInfo({ ...info, [name]: target.value });
+              }}
+            />
+          ))
+        }
+        <PhoneInput placeholder="Phone" required onChange={(value) => setInfo({ ...info, phone: value })} />
         <button
           className="tertiary-button"
           type="submit"
