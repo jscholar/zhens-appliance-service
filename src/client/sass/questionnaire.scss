@@ -3,7 +3,7 @@
 
 .questionnaire-container {
   position: absolute;
-  border-radius: 50px 50px 0 0;
+  border-radius: 40px 40px 0 0;
   background-color: colors.$complementTint;
   height: calc(100% - #{layout.$topHeight} - 10px);
   width: 100%;
@@ -20,6 +20,7 @@
   @import './questionnaire/appliances.scss';
   @import './questionnaire/zip.scss';
   @import './questionnaire/contactinfo.scss';
+  @import './questionnaire/symptoms.scss';
   height: 100%;
   text-align: center;
   overflow: scroll;
@@ -44,7 +45,6 @@
     height: calc(100% - #{layout.$topHeight});
     display: flex;
     transition: 300ms;
-    transition-delay: 100ms;
 
     .field {
       scroll-snap-stop: always;
