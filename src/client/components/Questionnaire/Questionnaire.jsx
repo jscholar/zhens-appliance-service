@@ -26,7 +26,7 @@ class Questionnaire extends Component {
   }
 
   scrollTo(i) {
-    this.ref.current.scroll({
+    this.ref.current.scrollTo({
       left: this.ref.current.clientWidth * i,
       behavior: 'smooth',
     });
@@ -47,7 +47,7 @@ class Questionnaire extends Component {
       >
         <div className="questionnaire-top">
           <div className="caret-container">
-            <button type="button" onClick={toggle}>
+            <button type="button" onClick={toggle} className={active ? 'flipped' : ''}>
               <i className="fas fa-caret-up questionnaire-caret" />
             </button>
           </div>
