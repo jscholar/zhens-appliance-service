@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
 import Contact from './pages/Contact';
+import About from './pages/About';
 import Questionnaire from './components/Questionnaire/Questionnaire';
 import Overlay from './components/Overlay';
 import NavMenu from './components/NavMenu';
@@ -26,7 +27,7 @@ const App = () => {
         </Overlay>
         <div className="pages">
           <Switch>
-            <Route path="/about" component={() => <div>About</div>} />
+            <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/service-map" component={() => <div>Service Map</div>} />
             <Route path="/" component={Landing} />
