@@ -6,11 +6,13 @@ import Appliances from './Appliances';
 import ZipCode from './ZipCode';
 import Brand from './Brand';
 import ContactInfo from './ContactInfo';
+import Symptoms from './Symptoms';
 
 const fields = [
   { name: 'appliance', component: Appliances },
   { name: 'brand', component: Brand },
   { name: 'zip', component: ZipCode },
+  { name: 'symptoms', component: Symptoms },
   { name: 'contact', component: ContactInfo },
 ];
 
@@ -23,6 +25,7 @@ class Questionnaire extends Component {
     };
     this.ref = createRef();
     this.scrollTo = this.scrollTo.bind(this);
+    this.submitRequest = this.submitRequest.bind(this);
   }
 
   scrollTo(i) {
@@ -32,8 +35,15 @@ class Questionnaire extends Component {
     });
   }
 
+  submitRequest() {
+    const { progress } = this.state;
+    if (progress.includes(null)) {
+      console.log('not done');
+    }
+  }
+
   render() {
-    const { ref } = this;
+    const { ref, submitRequest } = this;
     const { progress, current } = this.state;
     const { toggle, active } = this.props;
 
@@ -74,10 +84,11 @@ class Questionnaire extends Component {
                 {React.createElement(component, {
                   answer: (input) => {
                     const newProgress = [...progress];
-                    this.scrollTo(i + 1);
+                    this.scrollTo(Math.min(i + 1, fields.length - 1));
                     newProgress[i] = input;
                     this.setState({ progress: newProgress });
                   },
+                  submit: submitRequest,
                 })}
               </section>
             ))
