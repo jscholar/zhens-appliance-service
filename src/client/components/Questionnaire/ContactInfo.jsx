@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import PhoneInput from 'react-phone-input-auto-format';
+import Input from 'react-phone-number-input/input';
 
 const ContactInfo = ({ answer }) => {
   const [info, setInfo] = useState({});
@@ -24,6 +24,7 @@ const ContactInfo = ({ answer }) => {
             { name: 'email', placeholder: 'Email', type: 'email' },
           ].map(({ name, placeholder, type }) => (
             <input
+              key={name}
               name={name}
               type={type}
               placeholder={placeholder}
@@ -34,7 +35,7 @@ const ContactInfo = ({ answer }) => {
             />
           ))
         }
-        <PhoneInput placeholder="Phone" required onChange={(value) => setInfo({ ...info, phone: value })} />
+        <Input defaultCountry="US" placeholder="Phone" required onChange={(value) => setInfo({ ...info, phone: value })} />
         <button
           className="tertiary-button"
           type="submit"
