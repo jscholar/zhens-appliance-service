@@ -42,6 +42,7 @@ const Appliances = ({ answer }) => {
         prompt="Other"
         fieldName="appliance"
         handleSubmit={answer}
+        button
       />
     </div>
   );

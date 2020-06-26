@@ -37,6 +37,7 @@ const Brand = ({ answer }) => {
         prompt="Other"
         fieldName="brand"
         handleSubmit={answer}
+        button
       />
     </div>
   );
