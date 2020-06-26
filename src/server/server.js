@@ -7,6 +7,8 @@ import generateDocument from './lib/generateDocument';
 const documents = {
   landing: generateDocument('/'),
   contact: generateDocument('/contact'),
+  about: generateDocument('/about'),
+  map: generateDocument('/service-map'),
 };
 
 const server = express();

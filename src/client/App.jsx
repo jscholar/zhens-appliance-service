@@ -17,7 +17,10 @@ const App = () => {
   return (
     <main>
       <div className="layout">
-        <Navbar handleClick={() => setActive(false)} toggleMenu={() => setMenu(!menu)} />
+        <Navbar
+          handleClick={() => setActive(false)}
+          toggleMenu={() => setMenu(!menu)}
+        />
         <Overlay isOpen={menu} closeOverlay={() => setMenu(false)}>
           <NavMenu handleClick={() => {
             setMenu(false);
