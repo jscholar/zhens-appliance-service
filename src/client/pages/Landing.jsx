@@ -13,7 +13,7 @@ const Landing = () => (
         <em>Based in Seattle, WA</em>
       </p>
       <p className="banner-motto">
-        &quot;Trust your repairs to a real, experienced technician&quot;
+        &quot;Trust your repairs to a real, experienced technician.&quot;
       </p>
       <Link to="contact" className="primary-button">
         Contact Zhen
