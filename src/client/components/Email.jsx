@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Email = () => (
-  <div className="email card">
+  <div className="email">
     <p>Leave a message</p>
     <form>
       <div className="field">
