@@ -8,7 +8,7 @@ const Symptoms = ({ answer }) => {
       <div className="prompt" onChange={({ target }) => setSymptoms(target)}>
         Please briefly describe the symptoms
       </div>
-      <textarea rows="10" cols="50" />
+      <textarea onChange={({ target }) => setSymptoms(target.value)} rows="10" cols="50" />
       <div>
         <button className="secondary-button skip" type="button" onClick={() => answer('')}>Skip</button>
         <button className="tertiary-button" type="button" onClick={() => answer(symptoms)}>Continue</button>
