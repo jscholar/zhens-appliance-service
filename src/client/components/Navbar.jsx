@@ -7,7 +7,12 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import Logo from './Logo';
 
-const Navbar = ({ isOpen, toggleMenu, handleClick, displayContact }) => (
+const Navbar = ({
+  isOpen,
+  toggleMenu,
+  handleClick,
+  displayContact,
+}) => (
   <nav className="navbar">
     <Link className="navbar-logo" to="/" onClick={handleClick}>
       <Logo />
@@ -25,7 +30,7 @@ const Navbar = ({ isOpen, toggleMenu, handleClick, displayContact }) => (
           ) : null
       }
       <button type="button" className="menu-button" onClick={toggleMenu}>
-        <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+        <FontAwesomeIcon fixedWidth icon={isOpen ? faTimes : faBars} />
       </button>
     </div>
   </nav>
