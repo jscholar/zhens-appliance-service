@@ -14,7 +14,6 @@ import NavMenu from './components/NavMenu';
 const App = () => {
   const [active, setActive] = useState(false);
   const [menu, setMenu] = useState(false);
-  const [contacted, setContacted] = useState(false);
   const qClass = active ? 'questionnaire-active' : 'questionnaire-inactive';
 
   return (
