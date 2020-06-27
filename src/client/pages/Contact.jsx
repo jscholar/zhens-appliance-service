@@ -5,7 +5,6 @@ import Card from '../components/UI/Card';
 
 const Contact = () => {
   const [type, setType] = useState('phone');
-  const cardElement = type === 'phone' ? <Phone /> : <Email />;
 
   return (
     <div className="contact">
@@ -27,9 +26,16 @@ const Contact = () => {
         </button>
       </div>
       <div className="content">
-        <Card>
-          {cardElement}
-        </Card>
+        <div className={`phone-wrapper ${type === 'phone' ? '' : 'hidden'}`}>
+          <Card>
+            <Phone />
+          </Card>
+        </div>
+        <div className={`email-wrapper ${type !== 'phone' ? '' : 'hidden'}`}>
+          <Card>
+            <Email />
+          </Card>
+        </div>
       </div>
     </div>
   );
