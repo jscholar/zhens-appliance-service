@@ -25,7 +25,9 @@ class Questionnaire extends Component {
     this.state = {
       progress: new Array(fields.length).fill(null),
       current: 0,
-      notDone: false,
+      missingFields: false,
+      done: false,
+      loading: false,
     };
     this.ref = createRef();
     this.scrollTo = this.scrollTo.bind(this);
@@ -43,17 +45,27 @@ class Questionnaire extends Component {
     const { progress } = this.state;
     if (progress.includes(null)) {
       console.log('not done');
-      this.setState({ notDone: true });
+      this.setState({ missingFields: true });
     } else {
+      this.setState({ loading: true });
       const data = {};
       fields.forEach(({ name }, i) => { data[name] = progress[i]; });
-      sendMessage(data);
+      sendMessage(data)
+        .then(() => {
+          this.setState({ done: true, loading: false });
+        });
     }
   }
 
   render() {
     const { ref, submitRequest } = this;
-    const { progress, current } = this.state;
+    const {
+      progress,
+      current,
+      missingFields,
+      done,
+      loading,
+    } = this.state;
     const { toggle, active } = this.props;
 
     return (
@@ -101,6 +113,9 @@ class Questionnaire extends Component {
                       }
                     });
                   },
+                  missingFields,
+                  loading,
+                  done,
                 })}
               </section>
             ))

@@ -2,8 +2,21 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Input from 'react-phone-number-input/input';
 
-const ContactInfo = ({ answer }) => {
+import SubmitButton from '../UI/SubmitButton';
+
+const ContactInfo = ({
+  answer,
+  missingFields,
+  done,
+  loading,
+}) => {
   const [info, setInfo] = useState({});
+
+  let message = '';
+
+  if (missingFields) message = 'Please fill in the missing fields';
+  if (loading) message = '';
+  if (done) message = 'Thank you. Please allow up to 24 hours for us to respond';
 
   return (
     <div className="contact">
@@ -36,19 +49,28 @@ const ContactInfo = ({ answer }) => {
           ))
         }
         <Input defaultCountry="US" placeholder="Phone" required onChange={(value) => setInfo({ ...info, phone: value })} />
-        <button
-          className="tertiary-button"
-          type="submit"
-        >
-          Request Estimate
-        </button>
+        <SubmitButton
+          done={done}
+          loading={loading}
+          label="Request Estimate"
+        />
       </form>
+      <div>
+        {message}
+      </div>
     </div>
   );
 };
 
 ContactInfo.propTypes = {
   answer: PropTypes.func.isRequired,
+  missingFields: PropTypes.bool,
+  done: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
+
+ContactInfo.defaultProps = {
+  missingFields: false,
 };
 
 export default ContactInfo;
