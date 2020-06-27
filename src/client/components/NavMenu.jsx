@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import NavItem from './NavItem';
 
 const NavMenu = ({ handleClick }) => (
-  <div>
+  <div className="navmenu">
     <ul>
       {
         [

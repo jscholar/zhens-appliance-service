@@ -8,7 +8,7 @@ import Landing from './pages/Landing';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Questionnaire from './components/Questionnaire/Questionnaire';
-import Overlay from './components/Overlay';
+import Drawer from './components/Drawer';
 import NavMenu from './components/NavMenu';
 
 const App = () => {
@@ -23,13 +23,13 @@ const App = () => {
           handleClick={() => setActive(false)}
           toggleMenu={() => setMenu(!menu)}
         />
-        <Overlay isOpen={menu} closeOverlay={() => setMenu(false)}>
+        <Drawer isOpen={menu} closeDrawer={() => setMenu(false)}>
           <NavMenu handleClick={() => {
             setMenu(false);
             setActive(false);
           }}
           />
-        </Overlay>
+        </Drawer>
         <div className="pages">
           <Switch>
             <Route path="/about" component={About} />

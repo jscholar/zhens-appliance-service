@@ -110,3 +110,37 @@ input {
   background-color: white;
   border: 1px solid colors.$complementFaded;
 }
+
+.drawer {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  z-index: 10;
+  transition: 300ms;
+  transform: translateY(-110%);
+
+  
+  .content {
+    box-shadow: 0 0 5px 1px rgb(126, 126, 126);
+    z-index: 100;
+    background-color: white;
+  }
+}
+
+.background {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-open {
+  display: block;
+}
+
+.drawer-open {
+  display: block;
+  opacity: 1.0;
+  transform: translateY(0);
+}
