@@ -42,18 +42,20 @@ class Questionnaire extends Component {
   }
 
   submitRequest() {
-    const { progress } = this.state;
+    const { progress, done } = this.state;
+    if (done) return;
     if (progress.includes(null)) {
-      console.log('not done');
       this.setState({ missingFields: true });
     } else {
       this.setState({ loading: true });
       const data = {};
       fields.forEach(({ name }, i) => { data[name] = progress[i]; });
-      sendMessage(data)
-        .then(() => {
-          this.setState({ done: true, loading: false });
-        });
+      setTimeout(() => {
+        sendMessage(data)
+          .then(() => {
+            this.setState({ done: true });
+          });
+      }, 500);
     }
   }
 
