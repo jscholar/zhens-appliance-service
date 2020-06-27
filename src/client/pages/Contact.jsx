@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Phone from '../components/Phone';
 import Email from '../components/Email';
-import Card from '../components/Card';
+import Card from '../components/UI/Card';
 
 const Contact = () => {
   const [type, setType] = useState('phone');

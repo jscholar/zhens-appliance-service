@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Selection from './Selection';
-import OtherInput from './OtherInput';
+import OtherInput from '../UI/OtherInput';
 
 const appliances = [
   { name: 'refrigerator', svgLink: '/svg/001-fridge.svg', label: 'Refrigerator' },

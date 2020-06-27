@@ -8,12 +8,13 @@ import Landing from './pages/Landing';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Questionnaire from './components/Questionnaire/Questionnaire';
-import Drawer from './components/Drawer';
+import Drawer from './components/UI/Drawer';
 import NavMenu from './components/NavMenu';
 
 const App = () => {
   const [active, setActive] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [contacted, setContacted] = useState(false);
   const qClass = active ? 'questionnaire-active' : 'questionnaire-inactive';
 
   return (

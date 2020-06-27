@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import OtherInput from './OtherInput';
+import OtherInput from '../UI/OtherInput';
 
 const ZipCode = ({ answer }) => (
   <div className="zip">

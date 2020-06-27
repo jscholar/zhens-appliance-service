@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import OtherInput from './OtherInput';
+import OtherInput from '../UI/OtherInput';
 import Selection from './Selection';
 
 const brands = [
