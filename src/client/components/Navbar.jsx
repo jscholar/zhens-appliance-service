@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
 import Logo from './Logo';
 
-const Navbar = ({ toggleMenu, handleClick, displayContact }) => (
+const Navbar = ({ isOpen, toggleMenu, handleClick, displayContact }) => (
   <nav className="navbar">
     <Link className="navbar-logo" to="/" onClick={handleClick}>
       <Logo />
@@ -22,7 +25,7 @@ const Navbar = ({ toggleMenu, handleClick, displayContact }) => (
           ) : null
       }
       <button type="button" className="menu-button" onClick={toggleMenu}>
-        <i className="fas fa-bars" />
+        <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
       </button>
     </div>
   </nav>
@@ -32,6 +35,7 @@ Navbar.propTypes = {
   handleClick: PropTypes.func,
   toggleMenu: PropTypes.func.isRequired,
   displayContact: PropTypes.bool,
+  isOpen: PropTypes.bool.isRequired,
 };
 
 Navbar.defaultProps = {

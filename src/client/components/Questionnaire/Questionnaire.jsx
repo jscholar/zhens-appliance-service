@@ -1,6 +1,8 @@
 import React, { Component, createRef } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 
 import StatusBar from './StatusBar';
 import Appliances from './Appliances';
@@ -66,7 +68,7 @@ class Questionnaire extends Component {
         <div className="questionnaire-top">
           <div className="caret-container">
             <button type="button" onClick={toggle} className={active ? 'flipped' : ''}>
-              <i className="fas fa-caret-up questionnaire-caret" />
+              <FontAwesomeIcon className="questionnaire-caret" icon={faCaretUp} />
             </button>
           </div>
           <div className="status-container">

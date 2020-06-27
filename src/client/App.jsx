@@ -22,6 +22,7 @@ const App = () => {
         <Navbar
           handleClick={() => setActive(false)}
           toggleMenu={() => setMenu(!menu)}
+          isOpen={menu}
         />
         <Drawer isOpen={menu} closeDrawer={() => setMenu(false)}>
           <NavMenu handleClick={() => {
