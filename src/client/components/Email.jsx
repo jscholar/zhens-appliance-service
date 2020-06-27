@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import sendMessage from '../api/sendMessage';
+import SubmitButton from './UI/SubmitButton';
 
 class Email extends Component {
   constructor(props) {
@@ -7,6 +8,8 @@ class Email extends Component {
     this.state = {};
     this.onChange = this.onChange.bind(this);
     this.submit = this.submit.bind(this);
+    this.done = false;
+    this.loading = false;
   }
 
   onChange({ target }) {
@@ -16,15 +19,20 @@ class Email extends Component {
 
   submit(e) {
     e.preventDefault();
-    sendMessage(this.state);
+    this.setState({ loading: true });
+    sendMessage(this.state)
+      .then(() => {
+        this.setState({ done: true });
+      });
   }
 
   render() {
     const { onChange, submit } = this;
+    const { loading, done } = this.state;
     return (
       <div className="email">
         <p>Leave a message</p>
-        <form>
+        <form onSubmit={submit}>
           <div className="field">
             <label htmlFor="firstName">
               Name
@@ -47,9 +55,11 @@ class Email extends Component {
               <textarea onChange={onChange} name="message" required />
             </label>
           </div>
-          <button onClick={submit} type="submit" className="primary-button">
-            Submit
-          </button>
+          <SubmitButton
+            done={done}
+            loading={loading}
+            className="primary-button"
+          />
         </form>
       </div>
     );
