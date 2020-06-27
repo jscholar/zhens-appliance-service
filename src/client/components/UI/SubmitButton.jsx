@@ -8,6 +8,7 @@ const SubmitButton = ({
   done,
   onClick,
   loading,
+  className,
 }) => (
   <div className={`
     submit-button
@@ -16,7 +17,7 @@ const SubmitButton = ({
   `}
   >
     <button
-      className="tertiary-button"
+      className={className}
       type="submit"
       onClick={onClick}
     >
@@ -32,9 +33,11 @@ SubmitButton.propTypes = {
   done: PropTypes.bool.isRequired,
   loading: PropTypes.bool.isRequired,
   onClick: PropTypes.func,
+  className: PropTypes.string,
 };
 
 SubmitButton.defaultProps = {
+  className: 'tertiary-button',
   label: 'Submit',
   onClick: () => {},
 };
