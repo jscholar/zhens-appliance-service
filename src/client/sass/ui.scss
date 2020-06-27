@@ -146,10 +146,10 @@ input {
 }
 
 .submit-button {
+  text-align: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   button {
-    box-shadow: none;
     transition: 300ms, width 400ms cubic-bezier(0.54,-0.55, 0.46, 0.67),
     border-radius 200ms 300ms;
     width: 180px;
