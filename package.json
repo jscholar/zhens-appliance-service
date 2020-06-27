@@ -5,8 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dist/index.js",
-    "start-dev": "webpack -w --config webpack/webpack.config.prod.js & nodemon --delay 2.0 dist/index.js",
+    "start": "node --require dotenv/config dist/index.js",
+    "start-dev": "webpack -w --config webpack/webpack.config.prod.js & nodemon --require dotenv/config --delay 2.0 dist/index.js",
     "build": "webpack --config webpack/webpack.config.prod.js",
     "dev": "webpack-dev-server --config webpack/webpack.config.dev.js"
   },
@@ -24,9 +24,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "node-sass": "^4.14.1",
-    "nodemailer": "^6.3.1",
+    "nodemailer": "^6.4.10",
     "prop-types": "^15.7.2",
     "pug": "^2.0.4",
     "react": "^16.13.1",

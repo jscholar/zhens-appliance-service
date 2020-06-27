@@ -10,3 +10,5 @@ client.js
 
 # Compiled styles
 public/css/styles*
+
+.env
