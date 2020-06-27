@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import Input from './Input';
+import OtherInput from './OtherInput';
 import Selection from './Selection';
 
 const brands = [
@@ -33,9 +33,10 @@ const Brand = ({ answer }) => {
           />
         ))}
       </div>
-      <Input
+      <OtherInput
         prompt="Other"
         fieldName="brand"
+        onChange={setBrand}
         handleSubmit={answer}
         button
       />

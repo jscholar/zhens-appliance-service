@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({
+const OtherInput = ({
   prompt,
   fieldName,
   handleSubmit,
+  onChange,
   type,
 }) => {
   const [value, setValue] = useState('');
@@ -17,7 +18,10 @@ const Input = ({
           type="text"
           pattern={type === 'number' ? '[0-9]*' : '.*'}
           name={fieldName}
-          onChange={({ target }) => setValue(target.value)}
+          onChange={({ target }) => {
+            setValue(target.value);
+            onChange(target.value);
+          }}
           onKeyPress={({ key, target }) => {
             if (key === 'Enter') {
               // Unfocuses input on mobile browsers
@@ -41,16 +45,18 @@ const Input = ({
   );
 };
 
-Input.propTypes = {
+OtherInput.propTypes = {
   type: PropTypes.string,
   prompt: PropTypes.string,
   fieldName: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };
 
-Input.defaultProps = {
+OtherInput.defaultProps = {
   prompt: '',
   type: 'text',
+  onChange: () => {},
 };
 
-export default Input;
+export default OtherInput;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Selection from './Selection';
-import Input from './Input';
+import OtherInput from './OtherInput';
 
 const appliances = [
   { name: 'refrigerator', svgLink: '/svg/001-fridge.svg', label: 'Refrigerator' },
@@ -38,9 +38,10 @@ const Appliances = ({ answer }) => {
           ))
         }
       </div>
-      <Input
+      <OtherInput
         prompt="Other"
         fieldName="appliance"
+        onChange={setAppliance}
         handleSubmit={answer}
         button
       />

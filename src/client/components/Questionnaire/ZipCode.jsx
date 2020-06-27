@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Input from './Input';
+import OtherInput from './OtherInput';
 
 const ZipCode = ({ answer }) => (
   <div className="zip">
@@ -9,7 +9,7 @@ const ZipCode = ({ answer }) => (
       <p>What is your zip code?</p>
     </div>
     <div className="zip-input">
-      <Input
+      <OtherInput
         type="number"
         fieldName="zip"
         handleSubmit={answer}
