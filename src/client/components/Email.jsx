@@ -5,11 +5,12 @@ import SubmitButton from './UI/SubmitButton';
 class Email extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      done: false,
+      loading: false,
+    };
     this.onChange = this.onChange.bind(this);
     this.submit = this.submit.bind(this);
-    this.done = false;
-    this.loading = false;
   }
 
   onChange({ target }) {
@@ -52,7 +53,7 @@ class Email extends Component {
             <label htmlFor="message">
               Message
               <br />
-              <textarea onChange={onChange} name="message" required />
+              <textarea rows={3} onChange={onChange} name="message" required />
             </label>
           </div>
           <SubmitButton

@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0 auto 20px;
+    margin: 0 auto;
     
     .type {
       display: inline-block;
@@ -72,17 +72,14 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 
     p {
       margin-bottom: 10px;
     }
 
     form {
-      text-align: left;
-      flex-grow: 1;
-      text-align: left;
       display: flex;
+      text-align: left;
       flex-flow: column;
     }
 
@@ -93,8 +90,6 @@
 
     .field-message {
       margin-bottom: 20px;
-      flex-basis: 0px;
-      flex-grow: 1;
     }
 
     label {
@@ -105,7 +100,7 @@
     input, textarea {
       display: inline-block;
       width: 100%;
-      margin-bottom: 2px;
+      margin: 1px 0;
       border-radius: 3px;
       border: 1px solid #000000;
       padding: 5px;
@@ -123,8 +118,9 @@
 
     textarea {
       height: 90%;
+      max-height: 300px;
       overflow: auto;
-      resize: none;
+      resize: vertical;
     }
   }
 }
