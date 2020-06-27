@@ -22,9 +22,16 @@
 .banner-motto {
   text-align: center;
   font-size: typography.$paragraph;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
-.banner-title {
-  height: typography.$logoNormal;
+.banner-logo {
+  width: 100%;
+  padding: 0 20%;
+  
+  img {
+    min-width: 100px;
+    max-width: 200px;
+    width: 100%;
+  }
 }
