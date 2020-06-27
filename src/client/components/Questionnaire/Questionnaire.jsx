@@ -1,5 +1,4 @@
 import React, { Component, createRef } from 'react';
-import axios from 'axios';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
@@ -10,6 +9,7 @@ import ZipCode from './ZipCode';
 import Brand from './Brand';
 import ContactInfo from './ContactInfo';
 import Symptoms from './Symptoms';
+import sendMessage from '../../api/sendMessage';
 
 const fields = [
   { name: 'appliance', component: Appliances },
@@ -45,10 +45,9 @@ class Questionnaire extends Component {
       console.log('not done');
       this.setState({ notDone: true });
     } else {
-      axios.post('/api/message', progress)
-        .then(() => {
-          console.log('success');
-        });
+      const data = {};
+      fields.forEach(({ name }, i) => { data[name] = progress[i]; });
+      sendMessage(data);
     }
   }
 
