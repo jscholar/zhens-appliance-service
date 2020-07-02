@@ -3,6 +3,7 @@ import routes from './routes/routes';
 import PATH from '../PATH';
 
 import generateDocument from './lib/generateDocument';
+import mailer from './lib/mailer';
 
 const documents = {
   landing: generateDocument('/'),
@@ -16,11 +17,20 @@ const server = express();
 server.set('view engine', 'pug');
 
 server.use(express.static(PATH.public));
-
 server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
+
 
 server.use('/prototypes', routes);
+
+server.post('/api/message', (req, res) => {
+  mailer(req.body)
+    .then(() => {
+      res.sendStatus(201);
+    })
+    .catch(() => {
+      res.sendStatus(500);
+    });
+});
 
 server.get('/:route', (req, res) => {
   const { route } = req.params;
