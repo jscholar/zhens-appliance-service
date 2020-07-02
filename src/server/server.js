@@ -3,7 +3,7 @@ import routes from './routes/routes';
 import PATH from '../PATH';
 
 import generateDocument from './lib/generateDocument';
-import mailer from './lib/mailer';
+import { sendEmail, sendSMS } from './lib/mailer';
 
 const documents = {
   landing: generateDocument('/'),
@@ -23,7 +23,7 @@ server.use(express.json());
 server.use('/prototypes', routes);
 
 server.post('/api/message', (req, res) => {
-  mailer(req.body)
+  Promise.all([sendEmail(req.body), sendSMS(req.body)])
     .then(() => {
       res.sendStatus(201);
     })

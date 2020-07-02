@@ -2,14 +2,14 @@
 import nodemailer from 'nodemailer';
 import auth from '../auth/auth';
 
-const { EMAIL_USER, EMAIL_RECIPIENT } = process.env;
+const { EMAIL_USER, EMAIL_RECIPIENT, SMS_RECIPIENT } = process.env;
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth,
 });
 
-const sendMail = (info) => {
+export const sendEmail = (info) => {
   const string = JSON.stringify(info);
   return (
     transporter.sendMail({
@@ -22,4 +22,15 @@ const sendMail = (info) => {
   );
 };
 
-export default sendMail;
+export const sendSMS = (info) => {
+  const string = JSON.stringify(info);
+  return (
+    transporter.sendMail({
+      from: EMAIL_USER,
+      to: SMS_RECIPIENT,
+      subject: 'Website Order Request',
+      text: string,
+      html: string,
+    })
+  );
+};
