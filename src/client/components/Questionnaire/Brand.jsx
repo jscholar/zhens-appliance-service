@@ -8,6 +8,8 @@ const brands = [
   { name: 'lg', svgLink: '/svg/brand-lg.svg', label: 'LG' },
   { name: 'ge', svgLink: '/svg/brand-ge.svg', label: 'GE' },
   { name: 'samsung', svgLink: '/svg/brand-samsung.svg', label: 'Samsung' },
+  { name: 'whirlpool', svgLink: '/svg/brand-whirlpool.svg', label: 'Whirlpool' },
+  { name: 'electrolux', svgLink: '/svg/brand-electrolux.svg', label: 'Electrolux' },
 ];
 
 const Brand = ({ answer }) => {
