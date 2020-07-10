@@ -10,6 +10,7 @@ const NavMenu = ({ handleClick }) => (
         [
           { path: '/about', label: 'About' },
           { path: '/contact', label: 'Contact Info' },
+          { path: '/service-map', label: 'Service Map' },
         ]
           .map(({ path, label }) => (
             <NavItem key={path} path={path} label={label} handleClick={handleClick} />
