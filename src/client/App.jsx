@@ -10,6 +10,7 @@ import About from './pages/About';
 import Questionnaire from './components/Questionnaire/Questionnaire';
 import Drawer from './components/UI/Drawer';
 import NavMenu from './components/NavMenu';
+import Map from './components/Map';
 
 const App = () => {
   const [active, setActive] = useState(false);
@@ -35,7 +36,7 @@ const App = () => {
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
-            <Route path="/service-map" component={() => <div>Service Map</div>} />
+            <Route path="/service-map" component={Map} />
             <Route path="/" component={Landing} />
           </Switch>
         </div>
