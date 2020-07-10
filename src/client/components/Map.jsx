@@ -18,10 +18,25 @@ class Map extends Component {
       });
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   initMap() {
     this.map = new this.maps.Map(
       this.mapRef.current,
+      {
+        center: { lat: 47.5379351, lng: -122.2688035 },
+        zoom: 11,
+      },
     );
+    this.map.data.loadGeoJson('Zip_Codes.geojson');
+    this.map.data.setStyle({
+      fillColor: 'orange',
+      strokeWidth: 1,
+      strokeWeight: 1,
+      strokeColor: 'blue',
+    });
   }
 
   render() {

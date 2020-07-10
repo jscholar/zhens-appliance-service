@@ -1,6 +1,6 @@
 import $script from 'scriptjs';
 
-const API_URL = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC2I3FSzwLyC3Lf3jdf8yGcpimJi_g9IV8&libraries=&v=weekly';
+const API_URL = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC2I3FSzwLyC3Lf3jdf8yGcpimJi_g9IV8';
 
 let loadPromise;
 
