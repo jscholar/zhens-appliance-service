@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import OtherInput from '../UI/OtherInput';
+import Map from '../Map';
 
 const ZipCode = ({ answer }) => (
   <div className="zip">
@@ -15,6 +16,7 @@ const ZipCode = ({ answer }) => (
         handleSubmit={answer}
       />
     </div>
+    <Map />
   </div>
 );
 
