@@ -1,4 +1,13 @@
-.map {
-  height: 300px;
-  width: 300px;
+.service-map {
+
+  .map-container {
+    width: 80%;
+    padding-top: 100%;
+    margin: 0 auto;
+  }
+
+  .map {
+    height: 300px;
+    width: 300px;
+  }
 }

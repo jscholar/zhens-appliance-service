@@ -2,7 +2,14 @@ import React from 'react';
 import Map from '../components/Map';
 
 const ServiceMap = () => (
-  <Map />
+  <div className="service-map">
+    <p>
+      Service Area
+    </p>
+    <div className="map-container">
+      <Map />
+    </div>
+  </div>
 );
 
 export default ServiceMap;
