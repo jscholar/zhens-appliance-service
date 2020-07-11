@@ -22,6 +22,7 @@ module.exports = [
   }),
   merge.smart(common, { // Smart will check and override rules
     name: 'server',
+    mode: 'production',
     target: 'node',
     context: path.resolve(ROOT, 'src', 'index.js'),
     entry: path.resolve(ROOT, 'src', 'index.js'),
