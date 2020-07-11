@@ -9,7 +9,7 @@ const documents = {
   landing: generateDocument('/'),
   contact: generateDocument('/contact'),
   about: generateDocument('/about'),
-  map: generateDocument('/service-map'),
+  'service-map': generateDocument('/service-map'),
 };
 
 const server = express();
