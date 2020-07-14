@@ -26,7 +26,8 @@ class Email extends Component {
   }
 
   submit(e) {
-    const { form } = this.state;
+    const { form, done } = this.state;
+    if (done) return;
     e.preventDefault();
     this.setState({ loading: true });
     sendMessage(form)
