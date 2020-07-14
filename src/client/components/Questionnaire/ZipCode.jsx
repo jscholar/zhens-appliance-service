@@ -16,7 +16,9 @@ const ZipCode = ({ answer }) => (
         handleSubmit={answer}
       />
     </div>
-    <Map />
+    <div className="map-container">
+      <Map />
+    </div>
   </div>
 );
 
