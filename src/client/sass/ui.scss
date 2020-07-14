@@ -180,7 +180,7 @@ input {
     transition-delay: 400ms;
   }
   
-  &.loading {
+  &.loading, &.done {
     button {
       border-radius: 50%;
       height: 30px;

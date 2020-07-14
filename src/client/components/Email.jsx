@@ -32,6 +32,7 @@ class Email extends Component {
       .then(() => {
         this.setState({
           done: true,
+          loading: false,
         });
       });
   }
