@@ -8,6 +8,7 @@ class Email extends Component {
     this.state = {
       done: false,
       loading: false,
+      error: false,
       form: {},
     };
     this.onChange = this.onChange.bind(this);
@@ -30,16 +31,25 @@ class Email extends Component {
     this.setState({ loading: true });
     sendMessage(form)
       .then(() => {
-        this.setState({
-          done: true,
-          loading: false,
-        });
+        this.setState({ done: true });
+      })
+      .catch(() => {
+        this.setState({ error: true });
+      })
+      .then(() => {
+        this.setState({ loading: false });
       });
   }
 
   render() {
     const { onChange, submit } = this;
-    const { loading, done } = this.state;
+    const { loading, done, error } = this.state;
+    let statusMessage = null;
+    if (done) {
+      statusMessage = <div className="status">Thank you. Please allow up to 24 hours for us to respond</div>;
+    } else if (error) {
+      statusMessage = <div className="status">Sorry, something went wrong</div>;
+    }
     return (
       <div className="email">
         <p>Leave a message</p>
@@ -71,6 +81,7 @@ class Email extends Component {
             loading={loading}
             className="primary-button"
           />
+          {statusMessage}
         </form>
       </div>
     );
