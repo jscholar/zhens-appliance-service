@@ -8,6 +8,7 @@ class Email extends Component {
     this.state = {
       done: false,
       loading: false,
+      form: {},
     };
     this.onChange = this.onChange.bind(this);
     this.submit = this.submit.bind(this);
@@ -15,15 +16,23 @@ class Email extends Component {
 
   onChange({ target }) {
     const { name, value } = target;
-    this.setState({ [name]: value });
+    this.setState(({ form }) => ({
+      form: {
+        ...form,
+        [name]: value,
+      },
+    }));
   }
 
   submit(e) {
+    const { form } = this.state;
     e.preventDefault();
     this.setState({ loading: true });
-    sendMessage(this.state)
+    sendMessage(form)
       .then(() => {
-        this.setState({ done: true });
+        this.setState({
+          done: true,
+        });
       });
   }
 
