@@ -1,7 +1,7 @@
 import React, { Component, createRef } from 'react';
 
 import loadMap from '../api/loadMap';
-
+import MAP_POLYGON from '../constants/MAP_POLYGON.json';
 
 class Map extends Component {
   constructor(props) {
@@ -27,16 +27,17 @@ class Map extends Component {
       this.mapRef.current,
       {
         center: { lat: 47.5379351, lng: -122.2688035 },
-        zoom: 11,
+        zoom: 9,
       },
     );
-    this.map.data.loadGeoJson('Zip_Codes.geojson');
-    this.map.data.setStyle({
-      fillColor: 'orange',
-      strokeWidth: 1,
-      strokeWeight: 1,
-      strokeColor: 'blue',
+    const serviceArea = new this.maps.Polygon({
+      paths: MAP_POLYGON,
+      strokeColor: '#FFAD4E',
+      strokeOpacity: 0.5,
+      fillColor: '#FFAD4E',
+      fillOpacity: 0.2,
     });
+    serviceArea.setMap(this.map);
   }
 
   render() {
