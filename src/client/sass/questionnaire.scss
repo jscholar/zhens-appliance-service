@@ -9,7 +9,7 @@
   width: 100%;
   transition: 350ms ease-out;
   transform: translateY(-1 * layout.$topHeight);
-  z-index: 100;
+  z-index: 50;
 }
 
 .questionnaire-active {
