@@ -11,7 +11,12 @@
   align-items: center;
   
   .selection {
+    position: relative;
     width: 90%;
+    max-width: 240px;
+    background-color: colors.$gray6;
+    border-radius: 8px;
+    box-shadow: 2px black inset;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -20,11 +25,30 @@
     .type {
       display: inline-block;
       font-size: typography.$paragraph;
-      width: 40%;
+      padding: 8px;
+      width: 50%;
+      height: 100%;
+      z-index:10;
+    }
+
+    .slider {
+      position: absolute;
+      background-color: colors.$primary;
+      border-radius: 8px;
+      width: 50%;
+      height: 100%;
+      z-index: 0;
+      transition: 250ms ease;
+      &.left {
+        left: 0;
+      }
+      &.right {
+        left: 50%;
+      }
     }
     
     .active {
-      color: colors.$primary;
+      color: #FFFFFF;
     }
   }
 

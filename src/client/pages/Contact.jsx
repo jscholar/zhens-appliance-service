@@ -9,6 +9,7 @@ const Contact = () => {
   return (
     <div className="contact">
       <div className="selection">
+        <div className={`slider ${type === 'phone' ? 'left' : 'right'}`} />
         <button
           type="button"
           className={`type ${type === 'phone' ? 'active' : ''}`}
@@ -16,7 +17,6 @@ const Contact = () => {
         >
           Call or Text
         </button>
-        <div className="divider" />
         <button
           type="button"
           className={`type ${type === 'email' ? 'active' : ''}`}
