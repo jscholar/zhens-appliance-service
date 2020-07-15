@@ -3,7 +3,7 @@ import Map from '../components/Map';
 
 const ServiceMap = () => (
   <div className="service-map">
-    <p>
+    <p className="title">
       Service Area
     </p>
     <div className="map-container">
