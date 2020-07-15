@@ -23,6 +23,7 @@ const ZipCode = ({ answer }) => {
               answer(input);
             } else {
               setOutside(true);
+              answer(null);
             }
           }}
         />

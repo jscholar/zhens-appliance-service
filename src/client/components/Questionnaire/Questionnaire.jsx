@@ -107,7 +107,9 @@ class Questionnaire extends Component {
                 {React.createElement(component, {
                   answer: (input) => {
                     const newProgress = [...progress];
-                    this.scrollTo(Math.min(i + 1, fields.length - 1));
+                    if (input != null) {
+                      this.scrollTo(Math.min(i + 1, fields.length - 1));
+                    }
                     newProgress[i] = input;
                     this.setState({ progress: newProgress }, () => {
                       if (i === fields.length - 1) {
