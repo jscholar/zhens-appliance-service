@@ -8,13 +8,10 @@ import Landing from './pages/Landing';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Questionnaire from './components/Questionnaire/Questionnaire';
-import Drawer from './components/UI/Drawer';
-import NavMenu from './components/NavMenu';
 import ServiceMap from './pages/ServiceMap';
 
 const App = () => {
   const [active, setActive] = useState(false);
-  const [menu, setMenu] = useState(false);
   const qClass = active ? 'questionnaire-active' : 'questionnaire-inactive';
 
   return (
@@ -22,16 +19,8 @@ const App = () => {
       <div className="layout">
         <Navbar
           handleClick={() => setActive(false)}
-          toggleMenu={() => setMenu(!menu)}
-          isOpen={menu}
+          setActive={setActive}
         />
-        <Drawer isOpen={menu} closeDrawer={() => setMenu(false)}>
-          <NavMenu handleClick={() => {
-            setMenu(false);
-            setActive(false);
-          }}
-          />
-        </Drawer>
         <div className="pages">
           <Switch>
             <Route path="/about" component={About} />

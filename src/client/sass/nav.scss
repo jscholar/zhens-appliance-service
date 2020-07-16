@@ -2,10 +2,14 @@
 @use './utils/_typography';
 @use './utils/_colors';
 
-.navbar {
+.navbar-container {
   position: fixed;
+  width: 100%;
   top: 0;
   z-index: 100;
+}
+
+.navbar {
   background-color: white;
   display: flex;
   align-items: center;
@@ -14,6 +18,10 @@
   height: layout.$topHeight;
   padding: 10px 10px 10px 20px;
   border-bottom: 1px solid #CFCFCF;
+
+  &.drawer {
+    z-index: -1;
+  }
 }
 
 .navbar-logo {
@@ -39,10 +47,21 @@ a {
 
 .navmenu {
   ul {
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
   }
 
   .navitem {
     padding: 10px;
+  }
+}
+
+// Desktop
+@media(min-width: layout.$desktopThreshold) {
+  .navbar {
+    .menu-button {
+      display: none;
+    }
   }
 }

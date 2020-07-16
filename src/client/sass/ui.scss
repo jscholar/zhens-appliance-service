@@ -1,5 +1,6 @@
 @use './utils/colors';
 @use './utils/typography';
+@use './utils/layout';
 
 .card {
   background-color: white;
@@ -115,10 +116,9 @@ input {
   position: absolute;
   opacity: 0;
   right: 0;
-  z-index: 90;
   transition: 300ms;
-  transform: translateY(-110%);
-
+  transform: translateY(-100%);
+  align-self: flex-start;
   
   .content {
     box-shadow: 0 0 5px 1px rgb(126, 126, 126);
@@ -127,9 +127,17 @@ input {
   }
 }
 
+.drawer-open {
+  display: block;
+  opacity: 1.0;
+  transform: translateY(layout.$topHeight);
+}
+
 .background {
   display: none;
   position: absolute;
+  left: 0;
+  top: 0;
   z-index: 10;
   width: 100vw;
   height: 100vh;
@@ -137,12 +145,6 @@ input {
 
 .background-open {
   display: block;
-}
-
-.drawer-open {
-  display: block;
-  opacity: 1.0;
-  transform: translateY(0);
 }
 
 .submit-button {
