@@ -23,11 +23,10 @@ const Navbar = ({
           <Logo />
         </Link>
         <div className="navbar-right">
-
           {
             displayContact
               ? (
-                <div>
+                <div id="navbar-contact-button">
                   <Link onClick={handleClick} to="contact" className="primary-button primary-button-sm">
                     Contact
                   </Link>

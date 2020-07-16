@@ -148,6 +148,18 @@ input {
   display: block;
 }
 
+@media(min-width: layout.$desktopThreshold) {
+  .drawer {
+    position: relative;
+    opacity: 1;
+    right: initial;
+    transition: none;
+    transform: none;
+    align-self: initial;
+    z-index: 0;
+  }
+}
+
 .submit-button {
   text-align: center;
   -webkit-user-select: none;

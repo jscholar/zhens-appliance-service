@@ -50,14 +50,37 @@ a {
 
   .navitem {
     padding: 10px;
+    transition: 100ms;
+    &:hover {
+      background-color: colors.$gray6;
+    }
   }
 }
 
 // Desktop
 @media(min-width: layout.$desktopThreshold) {
   .navbar {
+    #navbar-contact-button {
+      display: none;
+    }
     .menu-button {
       display: none;
+    }
+
+    .content {
+      box-shadow: none !important;
+    }
+
+    .navmenu {
+      ul {
+        height: 100%;
+        flex-direction: row;
+      }
+
+      .navitem {
+        height: 100%;
+        margin: 0 5px;
+      }
     }
   }
 }
