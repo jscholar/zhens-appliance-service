@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const NavItem = ({ path, label, handleClick }) => (
   <li className="navitem">
-    <Link to={path} onClick={handleClick}>
+    <Link className="navlink" to={path} onClick={handleClick}>
       {label}
     </Link>
   </li>
