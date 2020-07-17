@@ -27,7 +27,7 @@ class Map extends Component {
       this.mapRef.current,
       {
         center: { lat: 47.5379351, lng: -122.2688035 },
-        zoom: 9,
+        zoom: window.innerWidth > 500 ? 10 : 9,
       },
     );
     const serviceArea = new this.maps.Polygon({
