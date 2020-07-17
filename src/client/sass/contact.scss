@@ -161,7 +161,7 @@
 @media(min-width: layout.$desktopThreshold) {
   .contact {
     justify-content: center;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     
     .selection {
@@ -191,6 +191,11 @@
       &>div {
         width: 50%;
         padding: 10px;
+      }
+
+      .card {
+        max-width: 350px;
+        margin: 0 auto;
       }
       
       .hidden {
