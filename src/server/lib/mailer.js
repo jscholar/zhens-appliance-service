@@ -6,6 +6,8 @@ const { EMAIL_USER, EMAIL_RECIPIENT, SMS_RECIPIENT } = process.env;
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
+  port: 465,
+  secure: true,
   auth,
 });
 
