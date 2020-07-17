@@ -157,3 +157,45 @@
     }
   }
 }
+
+@media(min-width: layout.$desktopThreshold) {
+  .contact {
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    .selection {
+      width: 100%;
+      max-width: 100%;
+      box-shadow: none;
+      background-color: inherit;
+  
+      .type {
+        width: 50%;
+        cursor: initial;
+      }
+      
+      .slider {
+        display: none;
+      }
+  
+      .active {
+        color: inherit;
+      }
+    }
+  
+    .content {
+      flex-grow: 0;
+      max-width: 100%;
+  
+      &>div {
+        width: 50%;
+        padding: 10px;
+      }
+      
+      .hidden {
+        display: initial;
+      }
+    }
+  }
+}
