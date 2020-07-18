@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import withStyles from 'isomorphic-style-loader/withStyles';
 
-import './sass/index.scss';
+import styles from './sass/index.scss';
 
 import Navbar from './components/Navbar';
 import Landing from './pages/Landing';
@@ -37,4 +38,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withStyles(styles)(App);
