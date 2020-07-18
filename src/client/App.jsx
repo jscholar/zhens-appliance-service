@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/service-map" component={ServiceMap} />
-            <Route path="/" component={Landing} />
+            <Route path="/" render={() => <Landing getStarted={() => setActive(true)} />} />
           </Switch>
         </div>
         <div className={`questionnaire-container ${qClass}`}>

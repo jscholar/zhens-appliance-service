@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import Logo from '../components/Logo';
 
-const Landing = () => (
+const Landing = ({ getStarted }) => (
   <div className="landing">
     <div className="banner">
       <div className="banner-title">
@@ -19,11 +19,15 @@ const Landing = () => (
           &quot;Trust your repairs to a real, experienced technician.&quot;
         </p>
       </div>
-      <Link to="contact" className="primary-button">
-        Contact Zhen
-      </Link>
+      <button type="button" className="tertiary-button banner-button" onClick={getStarted}>
+        Get Started
+      </button>
     </div>
   </div>
 );
+
+Landing.propTypes = {
+  getStarted: PropTypes.func.isRequired,
+};
 
 export default Landing;
