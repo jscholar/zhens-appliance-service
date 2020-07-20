@@ -165,23 +165,7 @@
     margin: 0 auto;
     
     .selection {
-      width: 100%;
-      max-width: 100%;
-      box-shadow: none;
-      background-color: inherit;
-  
-      .type {
-        width: 50%;
-        cursor: initial;
-      }
-      
-      .slider {
-        display: none;
-      }
-  
-      .active {
-        color: inherit;
-      }
+      display: none;
     }
   
     .content {
