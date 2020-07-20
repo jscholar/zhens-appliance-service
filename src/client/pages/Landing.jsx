@@ -20,7 +20,7 @@ const Landing = ({ getStarted }) => (
         </p>
       </div>
       <button type="button" className="tertiary-button banner-button" onClick={getStarted}>
-        Get Started
+        Get an estimate
       </button>
     </div>
   </div>
