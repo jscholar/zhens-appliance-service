@@ -11,7 +11,7 @@ const ZipCode = ({ answer }) => {
   return (
     <div className="zip">
       <div className="prompt">
-        <p>What is your zip code?</p>
+        <p>Please enter your zip code</p>
       </div>
       <div className={`zip-input ${outside ? 'outside' : ''}`}>
         <OtherInput
