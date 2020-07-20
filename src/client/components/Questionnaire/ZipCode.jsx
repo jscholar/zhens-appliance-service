@@ -27,6 +27,9 @@ const ZipCode = ({ answer }) => {
             }
           }}
         />
+        {
+          outside ? <div className="outside-text">Sorry, that&apos;s outside our service area</div> : null
+        }
       </div>
       <div className="map-container">
         <Map />
