@@ -3,6 +3,13 @@ import React, { Component, createRef } from 'react';
 import loadMap from '../api/loadMap';
 import MAP_POLYGON from '../constants/MAP_POLYGON.json';
 
+const SEATTLE_BOUNDS = {
+  north: 48.0,
+  west: -123.0,
+  south: 47.0,
+  east: -121.5,
+};
+
 class Map extends Component {
   constructor(props) {
     super(props);
@@ -28,6 +35,10 @@ class Map extends Component {
       {
         center: { lat: 47.5379351, lng: -122.2688035 },
         zoom: window.innerWidth > 500 ? 10 : 9,
+        restriction: {
+          latLngBounds: SEATTLE_BOUNDS,
+          strictBounds: false,
+        },
       },
     );
     const serviceArea = new this.maps.Polygon({
