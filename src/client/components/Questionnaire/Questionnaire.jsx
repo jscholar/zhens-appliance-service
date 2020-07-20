@@ -98,7 +98,7 @@ class Questionnaire extends Component {
         <div
           className="form"
           style={{
-            width: `${100 * fields.length}vw`,
+            width: `${100 * fields.length}%`,
           }}
         >
           {
