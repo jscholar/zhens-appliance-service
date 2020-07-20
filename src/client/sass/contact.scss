@@ -178,12 +178,16 @@
       }
 
       .card {
-        max-width: 350px;
+        max-width: 400px;
         margin: 0 auto;
       }
       
       .hidden {
         display: initial;
+      }
+
+      .email {
+        padding: 5px 10px;
       }
     }
   }
