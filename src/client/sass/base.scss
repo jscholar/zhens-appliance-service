@@ -4,6 +4,9 @@
 
 html {
   font-size: 16px;
+  @media(min-width: layout.$desktopThreshold) {
+    font-size: 18px;
+  }
   box-sizing: border-box;
 }
 
@@ -16,9 +19,6 @@ html {
 body {
   margin: 0;
   font-family: typography.$primaryfont;
-  @media(min-width: layout.$desktopThreshold) {
-    font-size: 1.2em;
-  }
 }
 
 .layout {
