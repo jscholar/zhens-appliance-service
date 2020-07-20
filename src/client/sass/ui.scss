@@ -69,7 +69,6 @@ button {
   .background {
     position: absolute;
     z-index: 10;
-    background-color: rgba($color: #000000, $alpha: 0.7);
     width: 100%;
     height: 100%;
   }
@@ -85,7 +84,6 @@ button {
   }
 
   .content {
-    background-color: white;
     z-index: 100;
     padding: 10px;
   }
@@ -120,11 +118,11 @@ input {
   transform: translateY(-100%);
   align-self: flex-start;
   z-index: -1;
+  background-color: colors.$complementTint;
   
   .content {
     box-shadow: 0 0 5px 1px rgb(126, 126, 126);
     z-index: 100;
-    background-color: white;
   }
 }
 
@@ -152,6 +150,7 @@ input {
   .drawer {
     position: relative;
     opacity: 1;
+    background-color: initial;
     right: initial;
     transition: none;
     transform: none;

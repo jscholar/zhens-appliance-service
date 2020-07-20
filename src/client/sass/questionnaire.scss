@@ -4,12 +4,18 @@
 .questionnaire-container {
   position: absolute;
   border-radius: 40px 40px 0 0;
-  background-color: colors.$complementTint;
+  background-color: rgba($color: colors.$complementTint, $alpha: 0.85);
   height: calc(100% - #{layout.$topHeight} - 10px);
   width: 100%;
   transition: 350ms ease-out;
   transform: translateY(-1 * layout.$topHeight);
   z-index: 50;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -95;
+    filter: blur(5px);
+  }
 }
 
 .questionnaire-active {
