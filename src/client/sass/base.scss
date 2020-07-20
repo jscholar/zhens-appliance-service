@@ -58,6 +58,11 @@ body {
   overflow: auto;
   margin-bottom: layout.$bottomHeight;
   z-index: 0;
+  transition: 200ms;
+}
+
+.blurred {
+  filter: blur(8px);
 }
 
 .logo {

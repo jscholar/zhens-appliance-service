@@ -22,7 +22,7 @@ const App = () => {
           handleClick={() => setActive(false)}
           setActive={setActive}
         />
-        <div className="pages">
+        <div className={`pages ${active ? 'blurred' : ''}`}>
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
