@@ -34,8 +34,8 @@ button {
 }
 
 .secondary-button {
-  box-shadow: 0 0 0 2px inset colors.$complement;
-  padding: 8px;
+  border: 2px solid colors.$complement;
+  padding: 6px;
   color: colors.$complement;
 }
 
