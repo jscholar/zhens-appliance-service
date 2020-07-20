@@ -1,5 +1,6 @@
 @use '../utils/colors';
 @use '../utils/typography';
+@use '../utils/layout';
 
 .field {
   scroll-snap-stop: always;
@@ -54,6 +55,17 @@
     justify-content: center;
     display: flex;
     align-items: center;
+  }
+}
+
+@media(min-width: layout.$desktopThreshold) {
+  .selection-choices {
+    max-width: 500px;
+  }
+
+  .selection {
+    max-width: 120px;
+    padding: 10px 8px 0;
   }
 }
 
